@@ -37,13 +37,15 @@ const projects = [
 ];
 
 export default function Portfolio() {
-  const [projectIndex, setProjectIndex] = React.useState<number>(0);
+  const [projectIndex, setProjectIndex] = React.useState<number | undefined>(
+    undefined
+  );
 
   function handleIndexChange(index: number) {
     setProjectIndex(index);
   }
 
-  const selectedProject = projects[projectIndex];
+  const selectedProject = projectIndex ? projects[projectIndex] : undefined;
 
   return (
     <Container id="portfolio" sx={{ py: { xs: 8, sm: 16 } }}>
