@@ -13,7 +13,7 @@ import Footer from "./components/Footer";
 
 export default function HomePage() {
   const [mode, setMode] = useState<PaletteMode>("dark");
-  const CustomTheme = createTheme(getTheme(mode));
+  const CustomTheme = getTheme(mode);
 
   function toggleMode() {
     setMode((previous) => (previous === "dark" ? "light" : "dark"));
@@ -34,7 +34,7 @@ export default function HomePage() {
           overflow: "hidden",
         }}
       >
-        <Particles mode={mode} quantity={200} />
+        <Particles mode={mode} quantity={300} />
         <div id="header" />
         <Header />
         <Portfolio />

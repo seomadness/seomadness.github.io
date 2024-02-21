@@ -229,7 +229,12 @@ export default function Particles({
 
   return (
     <div
-      style={{ position: "absolute", inset: "0px", animation: "fadeIn 5s" }}
+      style={{
+        position: "absolute",
+        inset: "0px",
+        animation: "fadeIn 5s",
+        zIndex: -99,
+      }}
       ref={canvasContainerRef}
       aria-hidden="true"
     >

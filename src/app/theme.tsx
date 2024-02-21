@@ -1,7 +1,7 @@
 "use client";
 
 import type {} from "@mui/material/themeCssVarsAugmentation";
-import { ThemeOptions, alpha } from "@mui/material/styles";
+import { ThemeOptions, alpha, createTheme } from "@mui/material/styles";
 import { PaletteMode } from "@mui/material";
 
 declare module "@mui/material/styles/createPalette" {
@@ -115,64 +115,65 @@ const customTheme = (mode: PaletteMode) => ({
         selected: alpha(primary[800], 0.2),
       }),
     },
-    typography: {
-      fontFamily: "IBM Plex Sans",
-      fontsize: 14,
-      h1: {
-        fontSize: 60,
-        fontWeight: 600,
-        lineHeight: 78 / 70,
-        letterSpacing: -0.2,
-      },
-      h2: {
-        fontSize: 48,
-        fontWeight: 600,
-        lineHeight: 1.2,
-      },
-      h3: {
-        fontSize: 42,
-        lineHeight: 1.2,
-      },
-      h4: {
-        fontSize: 36,
-        fontWeight: 500,
-        lineHeight: 1.5,
-      },
-      h5: {
-        fontSize: 20,
-        fontWeight: 600,
-      },
-      h6: {
-        fontSize: 18,
-      },
-      subtitle1: {
-        fontWeight: 300,
-        fontSize: 14,
-      },
-      subtitle2: {
-        fontWeight: 300,
-        fontSize: 13,
-      },
-      body1: {
-        fontWeight: 400,
-        fontSize: 14,
-      },
-      body2: {
-        fontWeight: 400,
-        fontSize: 13,
-      },
-      caption: {
-        fontWeight: 400,
-        fontSize: 12,
-      },
+  },
+  typography: {
+    fontFamily: "IBM Plex Sans",
+    fontsize: 14,
+    h1: {
+      fontSize: 120,
+      fontWeight: 600,
+      lineHeight: 78 / 70,
+      letterSpacing: -0.2,
+    },
+    h2: {
+      fontSize: 48,
+      fontWeight: 600,
+      lineHeight: 1.2,
+    },
+    h3: {
+      fontSize: 42,
+      lineHeight: 1.2,
+    },
+    h4: {
+      fontSize: 36,
+      fontWeight: 500,
+      lineHeight: 1.5,
+    },
+    h5: {
+      fontSize: 20,
+      fontWeight: 600,
+    },
+    h6: {
+      fontSize: 18,
+    },
+    subtitle1: {
+      fontWeight: 300,
+      fontSize: 15,
+    },
+    subtitle2: {
+      fontWeight: 300,
+      fontSize: 14,
+    },
+    body1: {
+      fontWeight: 400,
+      fontSize: 15,
+    },
+    body2: {
+      fontWeight: 400,
+      fontSize: 14,
+    },
+    caption: {
+      fontWeight: 400,
+      fontSize: 12,
     },
   },
 });
 
 export default function getTheme(mode: PaletteMode): ThemeOptions {
-  return {
-    ...customTheme(mode),
-    // Todo: Alter Mui Components
+  const palette = customTheme(mode);
+
+  const theme = createTheme({
+    ...palette,
     components: {
       MuiTypography: {
         defaultProps: {
@@ -183,5 +184,7 @@ export default function getTheme(mode: PaletteMode): ThemeOptions {
         },
       },
     },
-  };
+  });
+
+  return theme;
 }

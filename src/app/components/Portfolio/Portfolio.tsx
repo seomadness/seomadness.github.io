@@ -12,7 +12,7 @@ import Stack from "@mui/material/Stack";
 const projects = [
   {
     title: "Dashboard",
-    subheader: "2023",
+    subheader: "2024 - 2023",
     description: "Hello World",
     image: "",
   },
@@ -48,7 +48,7 @@ export default function Portfolio() {
   const selectedProject = projectIndex ? projects[projectIndex] : undefined;
 
   return (
-    <Container id="portfolio" sx={{ py: { xs: 8, sm: 16 } }}>
+    <Container id="portfolio" sx={{ py: { xs: 8, sm: 8 } }}>
       <Grid
         container
         sx={{
@@ -113,8 +113,7 @@ export default function Portfolio() {
                   flexDirection: { xs: "column", md: "row" },
                   alignItems: { md: "center" },
                   p: 1.5,
-                  pb: 1,
-                  gap: 2,
+                  gap: 1,
                 }}
               >
                 <div>
@@ -129,7 +128,7 @@ export default function Portfolio() {
                   <Typography
                     color="text.secondary"
                     variant="body2"
-                    sx={{ textTransform: "capitalize", my: 0.5 }}
+                    sx={{ textTransform: "capitalize", my: 0.25 }}
                   >
                     {subheader}
                   </Typography>
