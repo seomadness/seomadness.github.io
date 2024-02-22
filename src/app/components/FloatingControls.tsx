@@ -34,6 +34,7 @@ function FloatingControls({ mode, toggleMode }: FloatingControlsProps) {
         display: "flex",
         flexDirection: "column",
         alignItems: "right",
+        zIndex: 999,
         // width: "100dvw",
       }}
     >

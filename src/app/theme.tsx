@@ -107,12 +107,12 @@ const customTheme = (mode: PaletteMode) => ({
     text: {
       primary: gray[800],
       secondary: gray[600],
-      ...(mode === "dark" && { primary: "#fff", secondary: gray[400] }),
+      ...(mode === "dark" && { primary: "#fff", secondary: gray[300] }),
     },
     action: {
       selected: `${alpha(primary[200], 0.2)}`,
       ...(mode === "dark" && {
-        selected: alpha(primary[800], 0.2),
+        selected: alpha(primary[500], 0.2),
       }),
     },
   },
@@ -140,11 +140,12 @@ const customTheme = (mode: PaletteMode) => ({
       lineHeight: 1.5,
     },
     h5: {
-      fontSize: 20,
-      fontWeight: 600,
+      fontSize: 30,
+      fontWeight: 300,
     },
     h6: {
-      fontSize: 18,
+      fontSize: 24,
+      fontWeight: 300,
     },
     subtitle1: {
       fontWeight: 300,

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { CssBaseline } from "@mui/material";
 import { PaletteMode } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import Particles from "./components/particles";
 import getTheme from "./theme";
 import Header from "./components/Header";
@@ -34,9 +34,9 @@ export default function HomePage() {
           overflow: "hidden",
         }}
       >
-        <Particles mode={mode} quantity={300} />
+        <Particles mode={mode} quantity={50} />
         <div id="header" />
-        <Header />
+        <Header mode={mode} />
         <Portfolio />
         <FloatingControls mode={mode} toggleMode={toggleMode} />
         <Footer />

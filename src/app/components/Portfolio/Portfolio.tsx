@@ -1,14 +1,27 @@
 import * as React from "react";
+import { styled } from "@mui/system";
+import PortfolioDetails from "./PortfolioDetails";
+import Image from "next/image";
 import { alpha } from "@mui/material";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
+import Card, { CardOwnProps } from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
-import AccountManagement from "./AccountManagement";
+import adminConsolePrototype from "../../../images/portfolio/admin-console-prototype.png";
+
+const CardComponent = ({ ...props }) => <Card {...props} />;
+
+const CardButton = styled(CardComponent)(({ theme }) => ({
+  p: 0,
+  flexDirection: "column",
+  height: "fit-content",
+  width: "100%",
+  minWidth: "400px",
+  borderRadius: 0,
+  background: "transparent",
+}));
 
 const projects = [
   {
@@ -16,28 +29,24 @@ const projects = [
     subheader: "2024 - 2023",
     description: "Hello World",
     image: "",
-    content: <></>,
   },
   {
     title: "Device Interaction",
     subheader: "2023",
     description: "Hello World",
     image: "",
-    content: <></>,
   },
   {
     title: "Reservation System",
     subheader: "2022",
     description: "Hello World",
     image: "",
-    content: <></>,
   },
   {
     title: "Account Management",
     subheader: "2021",
     description: "Hello World",
-    image: "",
-    content: <AccountManagement />,
+    image: adminConsolePrototype,
   },
 ];
 
@@ -50,65 +59,37 @@ export default function Portfolio() {
     setProjectIndex(index);
   }
 
-  const selectedProject = projectIndex ? projects[projectIndex] : undefined;
-
   return (
     <Container id="portfolio" sx={{ py: { xs: 8, sm: 8 }, zIndex: 99 }}>
       <Grid
         container
+        spacing={3}
         sx={{
           display: {
             xs: "auto",
           },
         }}
       >
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          spacing={1}
-          justifyContent="center"
-          alignItems="flex-start"
-          useFlexGap
-          sx={{ width: "100%", display: { xs: "flex" } }}
-        >
-          {projects.map(({ title, subheader, description, content }, index) => (
-            <Card
+        {projects.map(({ title, subheader, image }, index) => (
+          <Grid item key={title} sm={12} md={6}>
+            <CardButton
               key={index}
               component={Button}
               onClick={() => handleIndexChange(index)}
-              sx={(theme) => ({
-                flexDirection: "column",
-                p: 0,
-                height: "fit-content",
-                width: "100%",
-                borderRadius: "1px",
-                outline: "1px solid",
-                outlineColor:
-                  theme.palette.mode === "light"
-                    ? alpha("#BFCCD9", 0.5)
-                    : alpha("#9CCCFC", 0.1),
-                boxShadow:
-                  theme.palette.mode === "light"
-                    ? `0 0 12px 8px ${alpha("#9CCCFC", 0.2)}`
-                    : `0 0 24px 12px ${alpha("#033363", 0.2)}`,
+              sx={{
                 backgroundColor:
-                  projectIndex === index ? "action.selected" : undefined,
-                borderColor: (theme) => {
-                  if (theme.palette.mode === "light") {
-                    return projectIndex === index
-                      ? "primary.light"
-                      : "primary.dark";
-                  }
-                  return projectIndex === index
-                    ? "primary.dark"
-                    : "primary.light";
-                },
-              })}
+                  projectIndex === index
+                    ? (theme) => theme.palette.background.paper
+                    : "transparent",
+              }}
             >
-              <CardMedia
-                component="img"
-                height="194"
-                image="https://placehold.co/600x400"
+              <Image
+                src={image}
+                height={400}
+                sizes="(max-width: 564px) 100vw"
+                style={{ objectFit: "cover" }}
                 alt={title}
+                priority
               />
               <Box
                 sx={{
@@ -116,45 +97,46 @@ export default function Portfolio() {
                   display: "flex",
                   textAlign: "left",
                   flexDirection: { xs: "column", md: "row" },
+                  justifyContent: "space-between",
                   alignItems: { md: "center" },
+                  background: "transparent !important",
                   p: 1.5,
                   gap: 1,
                 }}
               >
-                <div>
-                  <Typography
-                    color="text.primary"
-                    variant="body2"
-                    fontWeight="bold"
-                    sx={{ textTransform: "capitalize" }}
-                  >
-                    {title}
-                  </Typography>
-                  <Typography
-                    color="text.secondary"
-                    variant="body2"
-                    sx={{ textTransform: "capitalize", my: 0.25 }}
-                  >
-                    {subheader}
-                  </Typography>
-                  {projectIndex === index && (
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        backgroundColor: "primary.main",
-                        width: "100%",
-                        height: 5,
-                        bottom: 0,
-                        left: 0,
-                      }}
-                    />
-                  )}
-                </div>
+                <Typography
+                  color="text.primary"
+                  variant="body2"
+                  fontWeight="bold"
+                  sx={{ textTransform: "capitalize" }}
+                >
+                  {title}
+                </Typography>
+                <Typography
+                  color="text.secondary"
+                  variant="body2"
+                  sx={{ textTransform: "capitalize", my: 0.25 }}
+                >
+                  {subheader}
+                </Typography>
+                {projectIndex === index && (
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      backgroundColor: "primary.main",
+                      width: "100%",
+                      height: 5,
+                      bottom: 0,
+                      left: 0,
+                    }}
+                  />
+                )}
               </Box>
-            </Card>
-          ))}
-        </Stack>
+            </CardButton>
+          </Grid>
+        ))}
       </Grid>
+      <PortfolioDetails index={projectIndex} />
     </Container>
   );
 }

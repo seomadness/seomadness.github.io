@@ -10,8 +10,8 @@ import Stack from "@mui/material/Stack";
 
 export default function AccountManagement() {
   return (
-    <Container id="account-management">
-      <Grid container>Account Management</Grid>
-    </Container>
+    <Grid container spacing={1} id="">
+      <Typography variant="h5"> Account Management</Typography>
+    </Grid>
   );
 }
