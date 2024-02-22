@@ -2,7 +2,6 @@ import * as React from "react";
 import { styled } from "@mui/system";
 import PortfolioDetails from "./PortfolioDetails";
 import Image from "next/image";
-import { alpha } from "@mui/material";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -21,31 +20,34 @@ const CardButton = styled(CardComponent)(({ theme }) => ({
   minWidth: "400px",
   borderRadius: 0,
   background: "transparent",
+  "$ .MuiButtonBase": {
+    p: 0,
+  },
 }));
 
 const projects = [
   {
     title: "Dashboard",
     subheader: "2024 - 2023",
-    description: "Hello World",
-    image: "",
+    description: "Design",
+    image: "https://placehold.co/600x400",
   },
   {
-    title: "Device Interaction",
+    title: "Remote Device Interaction",
     subheader: "2023",
-    description: "Hello World",
-    image: "",
+    description: "Design & Development",
+    image: "https://placehold.co/600x400",
   },
   {
     title: "Reservation System",
     subheader: "2022",
-    description: "Hello World",
-    image: "",
+    description: "Design & Development",
+    image: "https://placehold.co/600x400",
   },
   {
-    title: "Account Management",
+    title: "Account Management Services",
     subheader: "2021",
-    description: "Hello World",
+    description: "Design",
     image: adminConsolePrototype,
   },
 ];
@@ -55,8 +57,21 @@ export default function Portfolio() {
     undefined
   );
 
+  function scrollToPortfolio() {
+    const portfolioElement = document.getElementById("portfolio-section");
+    if (portfolioElement) {
+      const topTarget = portfolioElement.offsetTop;
+      portfolioElement.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: topTarget,
+        behavior: "smooth",
+      });
+    }
+  }
+
   function handleIndexChange(index: number) {
     setProjectIndex(index);
+    scrollToPortfolio();
   }
 
   return (
@@ -70,12 +85,13 @@ export default function Portfolio() {
           },
         }}
       >
-        {projects.map(({ title, subheader, image }, index) => (
+        {projects.map(({ title, subheader, description, image }, index) => (
           <Grid item key={title} sm={12} md={6}>
             <CardButton
               key={index}
               component={Button}
               onClick={() => handleIndexChange(index)}
+              variant=""
               sx={{
                 backgroundColor:
                   projectIndex === index
@@ -85,9 +101,10 @@ export default function Portfolio() {
             >
               <Image
                 src={image}
+                width={0}
                 height={400}
                 sizes="(max-width: 564px) 100vw"
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", width: "100%" }}
                 alt={title}
                 priority
               />
@@ -106,11 +123,19 @@ export default function Portfolio() {
               >
                 <Typography
                   color="text.primary"
-                  variant="body2"
+                  variant="body1"
                   fontWeight="bold"
                   sx={{ textTransform: "capitalize" }}
                 >
                   {title}
+                  <Typography
+                    component="span"
+                    color="text.secondary"
+                    variant="body2"
+                  >
+                    <br />
+                    {description}
+                  </Typography>
                 </Typography>
                 <Typography
                   color="text.secondary"
@@ -136,7 +161,9 @@ export default function Portfolio() {
           </Grid>
         ))}
       </Grid>
-      <PortfolioDetails index={projectIndex} />
+      <div id="portfolio-section">
+        <PortfolioDetails index={projectIndex} />
+      </div>
     </Container>
   );
 }

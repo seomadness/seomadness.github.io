@@ -14,7 +14,7 @@ interface FloatingControlsProps {
 
 function FloatingControls({ mode, toggleMode }: FloatingControlsProps) {
   function scrollToTop() {
-    const topElement = document.getElementById("header");
+    const topElement = document.getElementById("header-section");
     if (topElement) {
       const topTarget = topElement.offsetTop;
       topElement?.scrollIntoView({ behavior: "smooth" });
@@ -35,7 +35,6 @@ function FloatingControls({ mode, toggleMode }: FloatingControlsProps) {
         flexDirection: "column",
         alignItems: "right",
         zIndex: 999,
-        // width: "100dvw",
       }}
     >
       <ToggleButtonGroup

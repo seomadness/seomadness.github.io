@@ -48,7 +48,7 @@ export default function Header({ mode }: { mode: PaletteMode }) {
             Hello
           </Typography>
           <Typography
-            variant="h6"
+            variant="h4"
             textAlign="center"
             color="text.secondary"
             sx={{

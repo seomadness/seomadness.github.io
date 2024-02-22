@@ -90,12 +90,12 @@ const customTheme = (mode: PaletteMode) => ({
     },
 
     secondary: {
-      light: secondary[200],
-      main: secondary[500],
+      light: secondary[300],
+      main: secondary[600],
       dark: secondary[800],
       ...(mode === "dark" && {
         light: secondary[200],
-        main: secondary[500],
+        main: secondary[600],
         dark: secondary[900],
       }),
     },
@@ -106,8 +106,8 @@ const customTheme = (mode: PaletteMode) => ({
     },
     text: {
       primary: gray[800],
-      secondary: gray[600],
-      ...(mode === "dark" && { primary: "#fff", secondary: gray[300] }),
+      secondary: primary[600],
+      ...(mode === "dark" && { primary: "#fff", secondary: primary[300] }),
     },
     action: {
       selected: `${alpha(primary[200], 0.2)}`,
@@ -126,26 +126,27 @@ const customTheme = (mode: PaletteMode) => ({
       letterSpacing: -0.2,
     },
     h2: {
-      fontSize: 48,
+      fontSize: 75,
       fontWeight: 600,
       lineHeight: 1.2,
     },
     h3: {
-      fontSize: 42,
+      fontSize: 60,
       lineHeight: 1.2,
     },
     h4: {
       fontSize: 36,
-      fontWeight: 500,
+      fontWeight: 300,
       lineHeight: 1.5,
     },
     h5: {
-      fontSize: 30,
+      fontSize: 24,
       fontWeight: 300,
     },
     h6: {
-      fontSize: 24,
-      fontWeight: 300,
+      fontSize: 18,
+      fontWeight: 400,
+      fontColor: "red",
     },
     subtitle1: {
       fontWeight: 300,
@@ -179,8 +180,17 @@ export default function getTheme(mode: PaletteMode): ThemeOptions {
       MuiTypography: {
         defaultProps: {
           variantMapping: {
-            subtitle1: "p",
-            subtitle2: "p",
+            h1: "h1",
+            h2: "h2",
+            h3: "h3",
+            h4: "h4",
+            h5: "h5",
+            h6: "h6",
+            subtitle1: "span",
+            subtitle2: "span",
+            body1: "p",
+            body2: "p",
+            inherit: "p",
           },
         },
       },
