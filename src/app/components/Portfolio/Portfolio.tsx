@@ -20,8 +20,11 @@ const CardButton = styled(CardComponent)(({ theme }) => ({
   minWidth: "400px",
   borderRadius: 0,
   background: "transparent",
-  "$ .MuiButtonBase": {
+  ".MuiButtonBase": {
     p: 0,
+  },
+  "&.selected:hover": {
+    background: theme.palette.background.paper,
   },
 }));
 
@@ -71,7 +74,7 @@ export default function Portfolio() {
 
   function handleIndexChange(index: number) {
     setProjectIndex(index);
-    scrollToPortfolio();
+    if (index) scrollToPortfolio();
   }
 
   return (
@@ -88,6 +91,7 @@ export default function Portfolio() {
         {projects.map(({ title, subheader, description, image }, index) => (
           <Grid item key={title} sm={12} md={6}>
             <CardButton
+              className={projectIndex === index ? "selected" : "selectable"}
               key={index}
               component={Button}
               onClick={() => handleIndexChange(index)}
@@ -104,7 +108,11 @@ export default function Portfolio() {
                 width={0}
                 height={400}
                 sizes="(max-width: 564px) 100vw"
-                style={{ objectFit: "cover", width: "100%" }}
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "50% 0%",
+                  width: "100%",
+                }}
                 alt={title}
                 priority
               />

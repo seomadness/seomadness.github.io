@@ -100,9 +100,9 @@ const customTheme = (mode: PaletteMode) => ({
       }),
     },
     background: {
-      default: "#fff",
-      paper: gray[50],
-      ...(mode === "dark" && { default: gray[900], paper: gray[800] }),
+      default: "#ffffff",
+      paper: gray[100],
+      ...(mode === "dark" && { default: gray[900], paper: primary[900] }),
     },
     text: {
       primary: gray[800],
@@ -144,9 +144,8 @@ const customTheme = (mode: PaletteMode) => ({
       fontWeight: 300,
     },
     h6: {
-      fontSize: 18,
+      fontSize: 20,
       fontWeight: 400,
-      fontColor: "red",
     },
     subtitle1: {
       fontWeight: 300,
