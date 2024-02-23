@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 import Card, { CardOwnProps } from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import adminConsolePrototype from "../../../images/portfolio/admin-console-prototype.png";
+import accountWeb from "../../../images/portfolio/account-web-access-prototype.png";
 
 const CardComponent = ({ ...props }) => <Card {...props} />;
 
@@ -48,7 +48,7 @@ const projects = [
     title: "Account Management Services",
     subheader: "2021",
     description: "Design",
-    image: adminConsolePrototype,
+    image: accountWeb,
   },
 ];
 
@@ -75,10 +75,10 @@ export default function Portfolio() {
   }
 
   return (
-    <Container id="portfolio" sx={{ py: { xs: 8, sm: 8 }, zIndex: 99 }}>
+    <Container id="portfolio" sx={{ pt: { xs: 8, sm: 8 }, zIndex: 99 }}>
       <Grid
         container
-        spacing={3}
+        spacing={2}
         sx={{
           display: {
             xs: "auto",
@@ -150,7 +150,7 @@ export default function Portfolio() {
                       position: "absolute",
                       backgroundColor: "primary.main",
                       width: "100%",
-                      height: 5,
+                      height: 7,
                       bottom: 0,
                       left: 0,
                     }}

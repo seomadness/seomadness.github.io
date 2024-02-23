@@ -1,3 +1,5 @@
+Open [seomadness.github.io](seomadness.github.io)
+
 ## Getting Started
 
 First, run the development server:

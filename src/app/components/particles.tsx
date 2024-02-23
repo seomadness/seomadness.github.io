@@ -127,7 +127,7 @@ export default function Particles({
       context.current.arc(x, y, size, 0, 2 * Math.PI);
       context.current.fillStyle =
         mode === "light"
-          ? `rgba(200, 200, 200, ${alpha})`
+          ? `rgba(175, 175, 175, ${alpha})`
           : `rgba(255, 255, 255, ${alpha})`;
       context.current.fill();
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);

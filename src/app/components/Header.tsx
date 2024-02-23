@@ -30,7 +30,7 @@ export default function Header({ mode }: { mode: PaletteMode }) {
         <Stack
           spacing={2}
           useFlexGap
-          sx={{ width: { xs: "100%", sm: "70%" }, zIndex: 99 }}
+          sx={{ width: { xs: "100%", sm: "80%" }, zIndex: 99 }}
         >
           <Typography
             component="span"
@@ -50,7 +50,7 @@ export default function Header({ mode }: { mode: PaletteMode }) {
           <Typography
             variant="h4"
             textAlign="center"
-            color="text.secondary"
+            color="text.primary"
             sx={{
               textShadow:
                 mode === "light" ? "#FFF 1px 1px 10px;" : "#000 1px 1px 10px;",
