@@ -1,8 +1,8 @@
 import * as React from "react";
 import Image from "next/image";
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { ReadableStack } from "./Portfolio";
 import Stack from "@mui/material/Stack";
 import discovery from "../../../images/portfolio/account-discovery-framing.png";
 import researchSynthesis from "../../../images/portfolio/account-research-synthesis.png";
@@ -11,7 +11,7 @@ import accountWeb from "../../../images/portfolio/account-web-access-prototype.p
 export default function AccountManagement() {
   return (
     <Grid container id="account-management" sx={{ mt: { xs: 1, sm: 2 } }}>
-      <Stack spacing={4} direction={"column"}>
+      <ReadableStack>
         <Typography variant="h4">Account Management Services</Typography>
         <Typography variant="body2">
           Client: Department of Defense, Air Force - Kobayashi Maru <br />
@@ -27,8 +27,9 @@ export default function AccountManagement() {
             As Kobayashi Maru, Section 31 is growing at a rapid pace, product
             teams are losing consistency to provide our expanding user groups
             access to their products. I am leading design in a team responsible
-            for streamlining Section 31 suite of products and how we can better
-            support the account creation process for warfighters worldwide.
+            for streamlining the Section 31 suite of products and how we can
+            better support the account creation process for warfighters
+            worldwide.
           </Typography>
         </Stack>
 
@@ -85,9 +86,9 @@ export default function AccountManagement() {
             assumptions.
           </Typography>
         </Stack>
-      </Stack>
+      </ReadableStack>
 
-      <Stack my={4} spacing={0} direction={"column"}>
+      <Stack my={5} spacing={0} direction={"column"}>
         <Image
           src={discovery}
           width={0}
@@ -106,8 +107,9 @@ export default function AccountManagement() {
           alt="account management research synthesis"
           loading="lazy"
         />
-
-        <Stack spacing={2} direction={"column"} sx={{ mt: 3 }}>
+      </Stack>
+      <ReadableStack mb={5}>
+        <Stack spacing={2}>
           <Typography variant="h6" color="text.secondary">
             Conclusion
           </Typography>
@@ -127,13 +129,14 @@ export default function AccountManagement() {
             active directory stored in the cloud database.
           </Typography>
         </Stack>
-      </Stack>
+      </ReadableStack>
       <Grid
-        id="conclusion"
+        id="outcome"
         container
         item
         sx={{
-          m: "0 !important",
+          my: 5,
+          mx: "0 !important",
           pl: "0 !important",
           alignItems: "center",
         }}
@@ -144,7 +147,7 @@ export default function AccountManagement() {
           xs={12}
           md={4}
         >
-          <Stack spacing={3} direction={"column"}>
+          <Stack spacing={3} direction={"column"} mb={{ sm: 5, md: 0 }}>
             <Typography variant="h6" color="text.secondary">
               Outcome
             </Typography>
