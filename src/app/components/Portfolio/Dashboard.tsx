@@ -64,8 +64,8 @@ export default function Dashboard() {
               The original core-product dashboard was designed in a masonry
               layout (commonly referred to as the Pinterest Style Layout) to
               accommodate the full content that the core-product and
-              service-product's capabilities asynchronously render. The problem
-              was easily identifiable as active items would shift to the
+              service-product&apos;s capabilities asynchronously render. The
+              problem was easily identifiable as active items would shift to the
               shortest column and aggregated content would reposition according
               to streaming data.
             </Typography>
@@ -317,8 +317,9 @@ export default function Dashboard() {
             <Typography variant="body1" color="text.primary">
               The size variations establish a clear visual hierarchy and content
               placement. The end user can customize and prioritize content to
-              adapt to the user's operational needs. Custom dashboards can be
-              saved as templates and applied to instances of a service-product.
+              adapt to the user&apos;s operational needs. Custom dashboards can
+              be saved as templates and applied to instances of a
+              service-product.
             </Typography>
           </div>
           <div>
