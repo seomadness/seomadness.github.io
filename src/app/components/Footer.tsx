@@ -21,7 +21,7 @@ function MadeWith() {
     <Typography variant="body2" color="text.secondary" mt={1}>
       {"Made with love using "}
       <Typography component={"span"} variant="body2" color="text.primary">
-        Next.js and React MUI
+        Next.js and React
       </Typography>
     </Typography>
   );

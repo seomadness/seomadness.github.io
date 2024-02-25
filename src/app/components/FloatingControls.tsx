@@ -29,7 +29,7 @@ function FloatingControls({ mode, toggleMode }: FloatingControlsProps) {
     <Box
       sx={{
         right: 24,
-        bottom: 24,
+        top: "50%",
         position: "fixed",
         display: "flex",
         flexDirection: "column",

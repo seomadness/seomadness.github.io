@@ -1,4 +1,5 @@
 import * as React from "react";
+import Dashboard from "./Dashboard";
 import AccountManagement from "./AccountManagement";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
@@ -13,6 +14,7 @@ export default function PortfolioDetails({
 }: {
   index: number | undefined;
 }) {
+  console.debug("Index: ", index);
   if (index)
     return (
       <Container
@@ -34,7 +36,8 @@ export default function PortfolioDetails({
             gap: 1,
           }}
         >
-          {index === 3 && <AccountManagement />}
+          {index === 1 && <Dashboard />}
+          {index === 4 && <AccountManagement />}
         </Box>
       </Container>
     );

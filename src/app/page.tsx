@@ -34,7 +34,7 @@ export default function HomePage() {
           overflow: "hidden",
         }}
       >
-        <Particles mode={mode} quantity={50} />
+        <Particles mode={mode} quantity={100} />
         <div id="header-section" />
         <Header mode={mode} />
         <Portfolio />

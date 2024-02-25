@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import { PaletteMode } from "@mui/material";
-import { useMousePosition } from "@/util/mouse";
+import { useMousePosition } from "util/mouse";
 
 interface ParticlesProps {
   quantity?: number;
@@ -124,12 +124,12 @@ export default function Particles({
       const { x, y, translateX, translateY, size, alpha } = circle;
       context.current.translate(translateX, translateY);
       context.current.beginPath();
-      context.current.arc(x, y, size, 0, 2 * Math.PI);
-      context.current.fillStyle =
+      context.current.arc(x, y, size, 0, 3 * Math.PI);
+      context.current.strokeStyle =
         mode === "light"
           ? `rgba(175, 175, 175, ${alpha})`
-          : `rgba(255, 255, 255, ${alpha})`;
-      context.current.fill();
+          : `rgba(200, 200, 200, ${alpha})`;
+      context.current.stroke();
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       if (!update) {

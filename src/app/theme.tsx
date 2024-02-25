@@ -135,17 +135,17 @@ const customTheme = (mode: PaletteMode) => ({
       lineHeight: 1.2,
     },
     h4: {
-      fontSize: 32,
+      fontSize: 40,
       fontWeight: 300,
       lineHeight: 1.5,
     },
     h5: {
-      fontSize: 24,
+      fontSize: 32,
       fontWeight: 300,
     },
     h6: {
       fontSize: 20,
-      fontWeight: 400,
+      fontWeight: 800,
     },
     subtitle1: {
       fontWeight: 300,
@@ -165,7 +165,7 @@ const customTheme = (mode: PaletteMode) => ({
     },
     caption: {
       fontWeight: 400,
-      fontSize: 12,
+      fontSize: 13,
     },
   },
 });
