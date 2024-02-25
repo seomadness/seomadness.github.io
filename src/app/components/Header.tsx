@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import WorkProcess from "./WorkProcess";
 
 export default function Header({ mode }: { mode: PaletteMode }) {
   return (
@@ -69,6 +70,7 @@ export default function Header({ mode }: { mode: PaletteMode }) {
           >
             Currently based in the Washington metropolitan area.
           </Typography>
+          <WorkProcess />
         </Stack>
       </Container>
     </Box>
