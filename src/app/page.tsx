@@ -12,7 +12,7 @@ import FloatingControls from "./components/FloatingControls";
 import Footer from "./components/Footer";
 
 export default function HomePage() {
-  const [mode, setMode] = useState<PaletteMode>("dark");
+  const [mode, setMode] = useState<PaletteMode>("light");
   const CustomTheme = getTheme(mode);
 
   function toggleMode() {
