@@ -68,7 +68,37 @@ export default function RemoteDevice() {
             using Next.js, React TS, and gRPC-Web.
           </Typography>
         </Stack>
-
+        <Stack spacing={3} direction={"column"} mb={{ sm: 5, md: 0 }}>
+          <Typography variant="h6" color="text.secondary">
+            Outcomes
+          </Typography>
+          <div>
+            <Typography
+              variant="body1"
+              fontWeight="bold"
+              color="text.secondary"
+            >
+              Support Product Development Cycles
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              A holistic platform to connect real devices to developers to
+              perform automated tests, generate reports, and debug products.
+            </Typography>
+          </div>
+          <div>
+            <Typography
+              variant="body1"
+              fontWeight="bold"
+              color="text.secondary"
+            >
+              Improve Speed of Product Delivery
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              Reduce the steps to configure products for deployment by
+              simulating services across real device variants.
+            </Typography>
+          </div>
+        </Stack>
         <Grid container item id="remote-device">
           <Grid item xs={12} p={0} mb={5}>
             <Image

@@ -71,6 +71,39 @@ export default function Reservation() {
             using Next.js, React TS, and gRPC-Web.
           </Typography>
         </Stack>
+
+        <Stack spacing={3} direction={"column"} mb={{ sm: 5, md: 0 }}>
+          <Typography variant="h6" color="text.secondary">
+            Outcomes
+          </Typography>
+          <div>
+            <Typography
+              variant="body1"
+              fontWeight="bold"
+              color="text.secondary"
+            >
+              Guaranteed Real Devices with Reservation
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              With reserved devices, developers and QA testers can build and
+              test products without interference during device interaction
+              sessions.
+            </Typography>
+          </div>
+          <div>
+            <Typography
+              variant="body1"
+              fontWeight="bold"
+              color="text.secondary"
+            >
+              Improve Speed of Product Delivery
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              Reduce the steps to configure products for deployment by
+              simulating services across real device variants.
+            </Typography>
+          </div>
+        </Stack>
       </ReadableStack>
 
       <Grid container item>

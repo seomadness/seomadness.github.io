@@ -132,7 +132,7 @@ export default function AccountManagement() {
         </Stack>
       </ReadableStack>
       <Grid
-        id="outcome"
+        id="Outcomes"
         container
         item
         sx={{
@@ -168,7 +168,7 @@ export default function AccountManagement() {
         >
           <Stack spacing={3} direction={"column"} mb={{ sm: 5, md: 0 }}>
             <Typography variant="h6" color="text.secondary">
-              Outcome
+              Outcomes
             </Typography>
             <div>
               <Typography

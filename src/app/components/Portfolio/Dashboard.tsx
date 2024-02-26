@@ -318,7 +318,7 @@ export default function Dashboard() {
       <ReadableStack mt={5}>
         <Stack spacing={3} direction={"column"} mb={{ sm: 5, md: 0 }}>
           <Typography variant="h6" color="text.secondary">
-            Outcome
+            Outcomes
           </Typography>
           <div>
             <Typography
