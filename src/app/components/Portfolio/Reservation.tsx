@@ -31,19 +31,18 @@ export default function Reservation() {
           </Typography>
           <Typography variant="body1" color="text.primary">
             Our service product developers require a holistic platform to test
-            their products on different operating systems prior to deployment.
-            As service products increase in complexity and market devices
-            continue to release OS updates, it is crucial to maintain a viable
-            production for targeted devices, monitor and optimize performance,
-            and remediate code vulnerabilities.
+            their products on different operating systems and device variants
+            prior to deployment. As service products increase in complexity and
+            market devices continue to release OS updates, it is crucial to
+            maintain a viable production for targeted devices, monitor and
+            optimize performance, and remediate code vulnerabilities.
           </Typography>
           <Typography variant="body1" color="text.primary">
             The device reservation system is a simple user flow that enables
             developers to filter for high-interest devices using predetermined
-            device properties and reservation status. Reservation allows our
-            internal product developers and quality assurance testers to
-            exclusively build, debug and continuously test their products by
-            remotely accessing real devices.
+            device properties and reservation status. Reservation allows all
+            stakeholders to exclusively build, debug and continuously test their
+            products by remotely accessing real devices.
           </Typography>
         </Stack>
 
@@ -82,7 +81,7 @@ export default function Reservation() {
               fontWeight="bold"
               color="text.secondary"
             >
-              Guaranteed Real Devices with Reservation
+              Guaranteed Real Devices
             </Typography>
             <Typography variant="body1" color="text.primary">
               With reserved devices, developers and QA testers can build and
@@ -96,64 +95,65 @@ export default function Reservation() {
               fontWeight="bold"
               color="text.secondary"
             >
-              Improve Speed of Product Delivery
+              Decrease Waiting Time with Reservation
             </Typography>
             <Typography variant="body1" color="text.primary">
-              Reduce the steps to configure products for deployment by
-              simulating services across real device variants.
+              Reserving in advance allows developers to have immediate access to
+              real devices.
             </Typography>
           </div>
         </Stack>
+
+        <Grid container item id="reservation-images">
+          <Grid item xs={6} sm={12}>
+            <Image
+              src={reservation}
+              width={0}
+              height={0}
+              sizes="(max-width: 700px) 100vw"
+              style={{ objectFit: "contain", width: "100%", height: "auto" }}
+              alt="create device reservation"
+              loading="lazy"
+            />
+            <Typography
+              variant="caption"
+              fontStyle={"italic"}
+              color="text.secondary"
+            >
+              Create Reservation Process
+            </Typography>
+          </Grid>
+
+          <ReadableStack mt={5} mb={2}>
+            <Typography variant="body1" color="text.primary">
+              Developers and QA testers can reserve devices for immediate or
+              future use. Creating a reservation is an intuitive process of
+              filtering by device properties and reservation status, and
+              selecting a reservation time and duration. Triggering the filter
+              fields will instantly fetch results and refresh the table data.
+            </Typography>
+          </ReadableStack>
+
+          <Grid item xs={6} sm={12} mt={4} mb={5}>
+            <Image
+              src={reservationFiltered}
+              width={0}
+              height={0}
+              sizes="(max-width: 700px) 100vw"
+              style={{ objectFit: "contain", width: "100%", height: "auto" }}
+              alt="filter devices for reservation"
+              loading="lazy"
+            />
+            <Typography
+              variant="caption"
+              fontStyle={"italic"}
+              color="text.secondary"
+            >
+              Filtered Devices and Prompt to Request Immediate Release of Device
+            </Typography>
+          </Grid>
+        </Grid>
       </ReadableStack>
-
-      <Grid container item>
-        <Grid item xs={6} sm={12} mt={4}>
-          <Image
-            src={reservation}
-            width={0}
-            height={0}
-            sizes="(max-width: 700px) 100vw"
-            style={{ objectFit: "contain", width: "100%", height: "auto" }}
-            alt="create device reservation"
-            loading="lazy"
-          />
-          <Typography
-            variant="caption"
-            fontStyle={"italic"}
-            color="text.secondary"
-          >
-            Create Reservation Process
-          </Typography>
-        </Grid>
-
-        <ReadableStack mt={5} mb={2}>
-          <Typography variant="body1" color="text.primary">
-            Developers and QA testers can reserve devices for immediate or
-            future use. Creating a reservation is an intuitive process of
-            filtering desired devices by device properties and reservation
-            status, and selecting a reservation time and duration.
-          </Typography>
-        </ReadableStack>
-
-        <Grid item xs={6} sm={12} mt={4} mb={5}>
-          <Image
-            src={reservationFiltered}
-            width={0}
-            height={0}
-            sizes="(max-width: 700px) 100vw"
-            style={{ objectFit: "contain", width: "100%", height: "auto" }}
-            alt="filter devices for reservation"
-            loading="lazy"
-          />
-          <Typography
-            variant="caption"
-            fontStyle={"italic"}
-            color="text.secondary"
-          >
-            Filtered Devices and Prompt to Request Immediate Release of Device
-          </Typography>
-        </Grid>
-      </Grid>
     </Grid>
   );
 }
