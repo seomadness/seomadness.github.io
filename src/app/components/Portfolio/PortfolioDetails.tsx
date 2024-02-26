@@ -22,6 +22,8 @@ export default function PortfolioDetails({
         }}
       >
         <Box
+          component="div"
+          id="portfolio-section"
           sx={{
             width: "100%",
             display: "flex",

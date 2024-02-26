@@ -86,9 +86,10 @@ const projects = [
 export default function Portfolio() {
   const [projectIndex, setProjectIndex] = React.useState<number>(0);
 
-  function scrollToPortfolio() {
+  async function scrollToPortfolio() {
     const portfolioElement = document.getElementById("portfolio-section");
-    if (portfolioElement) {
+    const hasChild = await portfolioElement?.hasChildNodes;
+    if (portfolioElement && hasChild) {
       const topTarget = portfolioElement.offsetTop;
       portfolioElement.scrollIntoView({ behavior: "smooth" });
       window.scrollTo({

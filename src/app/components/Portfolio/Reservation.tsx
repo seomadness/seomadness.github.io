@@ -68,7 +68,7 @@ export default function Reservation() {
           </Typography>
           <Typography variant="body1" color="text.primary">
             <b>Primarily</b> designed, developed, and maintained the front-end
-            using Next.js, React TS, and gRPC.
+            using Next.js, React TS, and gRPC-Web.
           </Typography>
         </Stack>
       </ReadableStack>
