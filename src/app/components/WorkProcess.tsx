@@ -40,7 +40,7 @@ export default function WorkProcess() {
   return (
     <Grid
       container
-      mt={10}
+      mt={5}
       spacing={2}
       columns={5}
       id="work-process"
@@ -58,6 +58,7 @@ export default function WorkProcess() {
             key={index}
             xs={1}
             sx={{
+              p: 1,
               display: "flex",
               justifyContent: "center",
               flexDirection: "column",

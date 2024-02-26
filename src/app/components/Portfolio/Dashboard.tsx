@@ -32,17 +32,17 @@ export default function Dashboard() {
           </Typography>
           <Typography variant="body1" color="text.primary">
             As the core-product expands its suite of service-products, the
-            complexity of provisioning individual product capabilities becomes
-            increasingly unsustainable.
+            complexity of provisioning individual product&apos;s capabilities
+            becomes increasingly unsustainable.
           </Typography>
           <Typography variant="body1" color="text.primary">
             The core-product laid the front-end foundation and continues to
-            supply development tools shared throughout all service-products. The
-            service-product teams are responsible for developing supplemental
-            components that provide direct access to their capabilities. Without
-            standardization, this implementation process inevitability creates
-            disjointed components that primarily affect the long-term user
-            experience in an operational environment.
+            supply development tools shared throughout all service-products.
+            With shared code, the service-product teams are responsible for
+            developing supplemental components that provide direct access to
+            their capabilities. Without standardization, this implementation
+            process inevitability creates disjointed components that primarily
+            affect the long-term user experience in an operational environment.
           </Typography>
         </Stack>
       </ReadableStack>
@@ -213,11 +213,11 @@ export default function Dashboard() {
             controlled dimensions.
           </Typography>
           <Typography variant="body1" color="text.primary">
-            The final dashboard design consists of 2 by 2 arrays. Each array
-            holds up to four small components, two medium components, or one
-            large component. The size variations accommodate all data content
-            and provide the tool to customize the visual hierarchy in accordance
-            with operational needs.
+            The final dashboard design uses a modular grid layout that consists
+            of 2 by 2 arrays. Each array holds up to four small components, two
+            medium components, or one large component. The size variations
+            accommodate all data content and provide the tools to customize the
+            visual hierarchy in accordance with operational needs.
           </Typography>
         </Stack>
       </ReadableStack>
@@ -257,6 +257,14 @@ export default function Dashboard() {
       <Typography variant="caption" fontStyle={"italic"} color="text.secondary">
         2 by 2 Array Grid Layout
       </Typography>
+
+      <ReadableStack mt={5} mb={2}>
+        <Typography variant="body1" color="text.primary">
+          The 2 by 2 arrays are flexible containers in width and consistent in
+          height. The grid layout and the items within the 2 by 2 array should
+          flow from left to right and top to bottom.
+        </Typography>
+      </ReadableStack>
 
       <Grid
         container
@@ -312,13 +320,13 @@ export default function Dashboard() {
               fontWeight="bold"
               color="text.secondary"
             >
-              Establish a Clear Visual Hierarchy with a Custom Dashboard
+              Establish a Visual Hierarchy with a Custom Dashboard
             </Typography>
             <Typography variant="body1" color="text.primary">
-              The size variations establish a clear visual hierarchy and content
-              placement. The end user can customize and prioritize content to
-              adapt to the user&apos;s operational needs. Custom dashboards can
-              be saved as templates and applied to instances of a
+              The size variations establish a visual hierarchy and recallable
+              content placement. The end user can customize and prioritize
+              content to adapt to the user&apos;s operational needs. Custom
+              dashboards can be saved as templates and reused on instances of a
               service-product.
             </Typography>
           </div>

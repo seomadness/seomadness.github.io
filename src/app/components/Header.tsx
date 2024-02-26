@@ -24,8 +24,8 @@ export default function Header({ mode }: { mode: PaletteMode }) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
+          pt: { xs: 12, sm: 15 },
+          pb: { xs: 3, sm: 5 },
         }}
       >
         <Stack

@@ -1,13 +1,10 @@
 import * as React from "react";
 import Dashboard from "./Dashboard";
+import RemoteDevice from "./RemoteDevice";
+import Reservation from "./Reservation";
 import AccountManagement from "./AccountManagement";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
 
 export default function PortfolioDetails({
   index,
@@ -37,6 +34,8 @@ export default function PortfolioDetails({
           }}
         >
           {index === 1 && <Dashboard />}
+          {index === 2 && <RemoteDevice />}
+          {index === 3 && <Reservation />}
           {index === 4 && <AccountManagement />}
         </Box>
       </Container>

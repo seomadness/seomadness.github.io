@@ -11,6 +11,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import accountWeb from "images/portfolio/account-web-access-prototype.png";
 import dashboardFinal from "images/portfolio/dashboard-final-data.png";
+import remoteDevice from "images/portfolio/remote-device-interaction-shell.png";
+import deviceReservation from "images/portfolio/reservation.png";
 
 const StackComponent = ({ ...props }) => (
   <Stack spacing={5} direction={"column"} {...props} />
@@ -62,14 +64,14 @@ const projects = [
     title: "Remote Device Interaction",
     subheader: "2023",
     description: "Design & Development",
-    image: "https://placehold.co/600x400",
+    image: remoteDevice,
     show: true,
   },
   {
     title: "Reservation System",
     subheader: "2022",
     description: "Design & Development",
-    image: "https://placehold.co/600x400",
+    image: deviceReservation,
     show: true,
   },
   {
