@@ -37,6 +37,7 @@ export default function HomePage() {
         <Particles mode={mode} quantity={100} />
         <div id="header-section" />
         <Header mode={mode} />
+        <div id="portfolio-list" />
         <Portfolio />
         <FloatingControls mode={mode} toggleMode={toggleMode} />
         <Footer />
