@@ -11,7 +11,6 @@ export default function PortfolioDetails({
 }: {
   index: number | undefined;
 }) {
-  console.debug("Index: ", index);
   if (index)
     return (
       <Container

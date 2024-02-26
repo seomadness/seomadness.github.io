@@ -15,7 +15,7 @@ import remoteDevice from "images/portfolio/remote-device-interaction-shell.png";
 import deviceReservation from "images/portfolio/reservation.png";
 
 const StackComponent = ({ ...props }) => (
-  <Stack spacing={5} direction={"column"} {...props} />
+  <Stack id="readable-stack" spacing={5} direction={"column"} {...props} />
 );
 
 export const ReadableStack = styled(StackComponent)(({ theme }) => ({
@@ -24,7 +24,7 @@ export const ReadableStack = styled(StackComponent)(({ theme }) => ({
   },
   [theme.breakpoints.up("md")]: {
     ".MuiTypography-root": {
-      width: "65%",
+      width: "70%",
     },
   },
 }));
@@ -61,7 +61,7 @@ const projects = [
     show: true,
   },
   {
-    title: "Remote Device Interaction",
+    title: "Remote Device Platform",
     subheader: "2023",
     description: "Design & Development",
     image: remoteDevice,

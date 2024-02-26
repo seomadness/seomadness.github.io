@@ -9,11 +9,20 @@ import reservationFiltered from "images/portfolio/reservation-filtered.png";
 
 export default function Reservation() {
   return (
-    <Grid container id="device-reservation" sx={{ mt: { xs: 1, sm: 2 } }}>
+    <Grid
+      container
+      id="device-reservation"
+      sx={{ mt: { xs: 1, sm: 2 }, width: "100%" }}
+    >
       <ReadableStack>
-        <Typography variant="h4">Remote Device Interaction</Typography>
-        <Typography variant="body2">
+        <Typography variant="h4">Reservation System</Typography>
+        <Typography variant="body1">
           Client: Service Product Developers
+          <br />
+          <u>
+            Sensitive materials have been redacted for Non-Disclosure Agreement
+            purposes.
+          </u>
         </Typography>
 
         <Stack spacing={2} direction={"column"}>
@@ -23,6 +32,18 @@ export default function Reservation() {
           <Typography variant="body1" color="text.primary">
             Our service product developers require a holistic platform to test
             their products on different operating systems prior to deployment.
+            As service products increase in complexity and market devices
+            continue to release OS updates, it is crucial to maintain a viable
+            production for targeted devices, monitor and optimize performance,
+            and remediate code vulnerabilities.
+          </Typography>
+          <Typography variant="body1" color="text.primary">
+            The device reservation system is a simple user flow that enables
+            developers to filter for high-interest devices using predetermined
+            device properties and reservation status. Reservation allows our
+            internal product developers and quality assurance testers to
+            exclusively build, debug and continuously test their products by
+            remotely accessing real devices.
           </Typography>
         </Stack>
 
@@ -31,47 +52,75 @@ export default function Reservation() {
             Responsibilities
           </Typography>
           <Typography variant="body1" color="text.primary">
-            Collaborated with internal product developers and product managers
-            to gather feature requests and technical requirements.
+            Collaborated with internal developers and managers to gather feature
+            requests and technical requirements to ensure the platform supports
+            all product teams and operating systems.
           </Typography>
           <Typography variant="body1" color="text.primary">
             Communicated product visions with all stakeholders to ensure the
-            platform support of all product teams.
+            platform is sustainable for continuous deployment in an air-gapped
+            environment.
           </Typography>
           <Typography variant="body1" color="text.primary">
-            Created research synthesis to prioritize features for our MVP and
-            high-fidelity user interface prototypes to communicate with the
+            Created research synthesis to prioritize feature requests for our
+            MVP and designed high-fidelity prototypes to communicate with the
             team.
           </Typography>
           <Typography variant="body1" color="text.primary">
-            Designed, developed and maintained the front-end using Next.js,
-            React TS, and gRPC.
+            <b>Primarily</b> designed, developed, and maintained the front-end
+            using Next.js, React TS, and gRPC.
           </Typography>
         </Stack>
       </ReadableStack>
 
-      <Stack mt={4} mb={5} spacing={0} direction={"column"}>
-        <Image
-          src={reservation}
-          width={0}
-          height={0}
-          sizes="(max-width: 700px) 100vw"
-          style={{ objectFit: "contain", width: "100%", height: "auto" }}
-          alt="create device reservation"
-          loading="lazy"
-        />
-      </Stack>
-      <Stack mt={4} mb={5} spacing={0} direction={"column"}>
-        <Image
-          src={reservationFiltered}
-          width={0}
-          height={0}
-          sizes="(max-width: 700px) 100vw"
-          style={{ objectFit: "contain", width: "100%", height: "auto" }}
-          alt="filter devices for reservation"
-          loading="lazy"
-        />
-      </Stack>
+      <Grid container item>
+        <Grid item xs={6} sm={12} mt={4}>
+          <Image
+            src={reservation}
+            width={0}
+            height={0}
+            sizes="(max-width: 700px) 100vw"
+            style={{ objectFit: "contain", width: "100%", height: "auto" }}
+            alt="create device reservation"
+            loading="lazy"
+          />
+          <Typography
+            variant="caption"
+            fontStyle={"italic"}
+            color="text.secondary"
+          >
+            Create Reservation Process
+          </Typography>
+        </Grid>
+
+        <ReadableStack mt={5} mb={2}>
+          <Typography variant="body1" color="text.primary">
+            Developers and QA testers can reserve devices for immediate or
+            future use. Creating a reservation is an intuitive process of
+            filtering desired devices by device properties and reservation
+            status, and selecting a reservation time and duration.
+          </Typography>
+        </ReadableStack>
+
+        <Grid item xs={6} sm={12} mt={4} mb={5}>
+          <Image
+            src={reservationFiltered}
+            width={0}
+            height={0}
+            sizes="(max-width: 700px) 100vw"
+            style={{ objectFit: "contain", width: "100%", height: "auto" }}
+            alt="filter devices for reservation"
+            loading="lazy"
+          />
+          <Typography
+            variant="caption"
+            fontStyle={"italic"}
+            color="text.secondary"
+          >
+            Filtered Devices and Prompt to Request Immediate Release of Device
+          </Typography>
+        </Grid>
+      </Grid>
     </Grid>
   );
 }

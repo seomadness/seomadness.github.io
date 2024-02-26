@@ -19,33 +19,36 @@ import wireframeComponent1728 from "images/portfolio/wireframe-dashboard-compone
 export default function Dashboard() {
   return (
     <Grid container id="dashboard" sx={{ mt: { xs: 1, sm: 2 } }}>
-      <ReadableStack mb={5}>
-        <Typography variant="h4">Core Dashboard</Typography>
-        <Typography variant="body1" sx={{ textDecoration: "underline" }}>
-          Illustrations are recreated from the original design as visual aids
-          and sensitive materials have been redacted for Non-Disclosure
-          Agreement purposes.
-        </Typography>
-        <Stack spacing={2} direction={"column"}>
-          <Typography variant="h6" color="text.secondary">
-            Background
+      <Grid item xs={12}>
+        <ReadableStack mb={5}>
+          <Typography variant="h4">Core Dashboard</Typography>
+          <Typography variant="body1" sx={{ textDecoration: "underline" }}>
+            Illustrations are recreated from the original design as visual aids
+            and sensitive materials have been redacted for Non-Disclosure
+            Agreement purposes.
           </Typography>
-          <Typography variant="body1" color="text.primary">
-            As the core-product expands its suite of service-products, the
-            complexity of provisioning individual product&apos;s capabilities
-            becomes increasingly unsustainable.
-          </Typography>
-          <Typography variant="body1" color="text.primary">
-            The core-product laid the front-end foundation and continues to
-            supply development tools shared throughout all service-products.
-            With shared code, the service-product teams are responsible for
-            developing supplemental components that provide direct access to
-            their capabilities. Without standardization, this implementation
-            process inevitability creates disjointed components that primarily
-            affect the long-term user experience in an operational environment.
-          </Typography>
-        </Stack>
-      </ReadableStack>
+          <Stack spacing={2} direction={"column"}>
+            <Typography variant="h6" color="text.secondary">
+              Background
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              As the core-product expands its suite of service-products, the
+              complexity of provisioning individual product&apos;s capabilities
+              becomes increasingly unsustainable.
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              The core-product laid the front-end foundation and continues to
+              supply development tools shared throughout all service-products.
+              With shared code, the service-product teams are responsible for
+              developing supplemental components that provide direct access to
+              their capabilities. Without standardization, this implementation
+              process inevitability creates disjointed components that primarily
+              affect the long-term user experience in an operational
+              environment.
+            </Typography>
+          </Stack>
+        </ReadableStack>
+      </Grid>
 
       <Grid
         container
@@ -216,8 +219,8 @@ export default function Dashboard() {
             The final dashboard design uses a modular grid layout that consists
             of 2 by 2 arrays. Each array holds up to four small components, two
             medium components, or one large component. The size variations
-            accommodate all data content and provide the tools to customize the
-            visual hierarchy in accordance with operational needs.
+            accommodate all data content and provide dashboard customization to
+            agjust high-interest content in accordance with operational needs.
           </Typography>
         </Stack>
       </ReadableStack>
@@ -262,7 +265,10 @@ export default function Dashboard() {
         <Typography variant="body1" color="text.primary">
           The 2 by 2 arrays are flexible containers in width and consistent in
           height. The grid layout and the items within the 2 by 2 array should
-          flow from left to right and top to bottom.
+          flow from left to right and top to bottom. Designed around the common
+          screen resolution of 1920 x 1080, the dashboard viewpoint should
+          maintain full visibility of two rows and a glimpse of the row
+          underneath to indicate further content.
         </Typography>
       </ReadableStack>
 
@@ -341,7 +347,7 @@ export default function Dashboard() {
             <Typography variant="body1" color="text.primary">
               The 2 by 2 array grid layout promotes uniformity across different
               service-product dashboards to help users recollect the location of
-              content and navigate aggregated content.
+              content in a linear order and navigate aggregated content.
             </Typography>
           </div>
           <div>
@@ -355,8 +361,8 @@ export default function Dashboard() {
             <Typography variant="body1" color="text.primary">
               The structured layout will help not only the end users, but
               service-product developers create dashboard components by
-              utilizing size variation templates provided by the core-product
-              team.
+              utilizing controlled-size variation templates provided by the
+              core-product team.
             </Typography>
           </div>
           <div>
