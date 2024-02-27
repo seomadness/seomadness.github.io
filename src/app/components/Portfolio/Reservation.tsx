@@ -31,11 +31,11 @@ export default function Reservation() {
           </Typography>
           <Typography variant="body1" color="text.primary">
             Our service product developers require a holistic platform to test
-            their products on different operating systems prior to deployment.
-            As service products increase in complexity and market devices
-            continue to release OS updates, it is crucial to maintain a viable
-            production for targeted devices, monitor and optimize performance,
-            and remediate code vulnerabilities.
+            their products on different operating systems and device variants
+            prior to deployment. As service products increase in complexity and
+            market devices continue to release OS updates, it is crucial to
+            maintain a viable production for targeted devices, monitor and
+            optimize performance, and remediate code vulnerabilities.
           </Typography>
           <Typography variant="body1" color="text.primary">
             The device reservation system is a simple user flow that enables
@@ -68,7 +68,8 @@ export default function Reservation() {
           </Typography>
           <Typography variant="body1" color="text.primary">
             <b>Primarily</b> designed, developed, and maintained the front-end
-            using Next.js, React TS, and gRPC-Web.
+            using Next.js, React TS, and gRPC-Web. Dockerized our platform to
+            run on a cloud provider.
           </Typography>
         </Stack>
 
