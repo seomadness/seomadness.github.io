@@ -17,7 +17,7 @@ export default function RemoteDevice() {
       <ReadableStack>
         <Typography variant="h4">Remote Device Platform</Typography>
         <Typography variant="body1">
-          Client: Service Product Developers
+          Client: Internal Product Developers
           <br />
           <u>
             Sensitive materials have been redacted for Non-Disclosure Agreement
@@ -82,8 +82,9 @@ export default function RemoteDevice() {
               Support Product Development Cycles
             </Typography>
             <Typography variant="body1" color="text.primary">
-              A holistic platform to connect real devices to developers to
-              perform automated tests, generate reports, and debug products.
+              A holistic platform to connect real interactable devices to
+              developers to perform automated tests, generate reports, and debug
+              products.
             </Typography>
           </div>
           <div>
@@ -97,6 +98,18 @@ export default function RemoteDevice() {
             <Typography variant="body1" color="text.primary">
               Reduce the steps to configure products for deployment by
               simulating services across real device variants.
+            </Typography>
+          </div>
+          <div>
+            <Typography
+              variant="body1"
+              fontWeight="bold"
+              color="text.secondary"
+            >
+              Efficiency in User Experience
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              Connect device variants according to OS-focused developer profile.
             </Typography>
           </div>
         </Stack>

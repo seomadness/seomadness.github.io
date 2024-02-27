@@ -17,7 +17,7 @@ export default function Reservation() {
       <ReadableStack>
         <Typography variant="h4">Reservation System</Typography>
         <Typography variant="body1">
-          Client: Service Product Developers
+          Client: Internal Product Developers
           <br />
           <u>
             Sensitive materials have been redacted for Non-Disclosure Agreement
@@ -83,11 +83,11 @@ export default function Reservation() {
               fontWeight="bold"
               color="text.secondary"
             >
-              Guaranteed Real Devices with Reservation
+              Guaranteed Real Devices
             </Typography>
             <Typography variant="body1" color="text.primary">
               With reserved devices, developers and QA testers can build and
-              test products without interference during device interaction
+              test products without interference during their exclusive
               sessions.
             </Typography>
           </div>
@@ -97,11 +97,11 @@ export default function Reservation() {
               fontWeight="bold"
               color="text.secondary"
             >
-              Improve Speed of Product Delivery
+              Efficiency in User Experience
             </Typography>
             <Typography variant="body1" color="text.primary">
-              Reduce the steps to configure products for deployment by
-              simulating services across real device variants.
+              Reduce the steps to test products for deployment by connecting
+              device variants according to OS-focused developer profile.
             </Typography>
           </div>
         </Stack>
@@ -123,16 +123,16 @@ export default function Reservation() {
             fontStyle={"italic"}
             color="text.secondary"
           >
-            Create Reservation Process
+            Create Reservation Process for Android Product Developers
           </Typography>
         </Grid>
 
         <ReadableStack mt={5} mb={2}>
           <Typography variant="body1" color="text.primary">
-            Developers and QA testers can reserve devices for immediate or
-            future use. Creating a reservation is an intuitive process of
-            filtering desired devices by device properties and reservation
-            status, and selecting a reservation time and duration.
+            Service product developers and QA testers can reserve devices for
+            immediate or future use. Creating a reservation is an intuitive
+            process of filtering desired devices by device properties and
+            reservation status, and selecting a reservation time and duration.
           </Typography>
         </ReadableStack>
 
