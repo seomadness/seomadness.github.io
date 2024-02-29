@@ -31,7 +31,7 @@ const Container = styled("div")(({ theme }) => ({
     position: "absolute",
     backgroundColor: "red",
     bottom: "20vh",
-    left: "72vw",
+    left: "74vw",
     width: "200px",
     height: "200px",
     background: theme.palette.mode === "light" ? "#f3f3f3" : "#171c1f",
