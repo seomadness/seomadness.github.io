@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { CssBaseline } from "@mui/material";
 import { PaletteMode } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
-import Particles from "./components/particles";
+import ContainedParticles from "./components/containedParticles";
 import getTheme from "./theme";
 import Header from "./components/Header";
 import Portfolio from "./components/Portfolio/Portfolio";
@@ -34,7 +34,8 @@ export default function HomePage() {
           overflow: "hidden",
         }}
       >
-        <Particles mode={mode} quantity={100} />
+        <ContainedParticles mode={mode} quantity={200} id="large-particles" />
+        <ContainedParticles mode={mode} quantity={75} id="small-particles" />
         <div id="header-section" />
         <Header mode={mode} />
         <div id="portfolio-list" />

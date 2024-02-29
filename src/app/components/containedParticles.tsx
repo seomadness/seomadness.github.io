@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
+import { styled } from "@mui/system";
 import { PaletteMode } from "@mui/material";
-import { useMousePosition } from "util/mouse";
 
 interface ParticlesProps {
   quantity?: number;
@@ -10,21 +10,47 @@ interface ParticlesProps {
   ease?: number;
   refresh?: boolean;
   mode: PaletteMode;
+  id: string;
 }
 
-export default function Particles({
+const Container = styled("div")(({ theme }) => ({
+  position: "absolute",
+  inset: "0px",
+  animation: "fadeIn 5s",
+  zIndex: -99,
+  ".large-particles": {
+    position: "absolute",
+    top: "10vh",
+    left: "15vw",
+    width: "400px",
+    height: "400px",
+    background: theme.palette.mode === "light" ? "aliceblue" : "#18252f",
+    borderRadius: "100%",
+  },
+  ".small-particles": {
+    position: "absolute",
+    backgroundColor: "red",
+    bottom: "20vh",
+    left: "72vw",
+    width: "200px",
+    height: "200px",
+    background: theme.palette.mode === "light" ? "#f3f3f3" : "#171c1f",
+    borderRadius: "100%",
+  },
+}));
+
+export default function ContainedParticles({
   quantity = 30,
   staticity = 50,
   ease = 50,
   refresh = false,
   mode,
+  id,
 }: ParticlesProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
   const circles = useRef<any[]>([]);
-  const mousePosition = useMousePosition();
-  const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
 
@@ -43,30 +69,12 @@ export default function Particles({
   }, []);
 
   useEffect(() => {
-    onMouseMove();
-  }, [mousePosition.x, mousePosition.y]);
-
-  useEffect(() => {
     initCanvas();
   }, [refresh]);
 
   const initCanvas = () => {
     resizeCanvas();
     drawParticles();
-  };
-
-  const onMouseMove = () => {
-    if (canvasRef.current) {
-      const rect = canvasRef.current.getBoundingClientRect();
-      const { w, h } = canvasSize.current;
-      const x = mousePosition.x - rect.left - w / 2;
-      const y = mousePosition.y - rect.top - h / 2;
-      const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
-      if (inside) {
-        mouse.current.x = x;
-        mouse.current.y = y;
-      }
-    }
   };
 
   type Circle = {
@@ -195,12 +203,6 @@ export default function Particles({
       }
       circle.x += circle.dx;
       circle.y += circle.dy;
-      circle.translateX +=
-        (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) /
-        ease;
-      circle.translateY +=
-        (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) /
-        ease;
       // circle gets out of the canvas
       if (
         circle.x < -circle.size ||
@@ -236,22 +238,10 @@ export default function Particles({
   }, [mode]);
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        inset: "0px",
-        animation: "fadeIn 5s",
-        zIndex: -99,
-        top: "5vh",
-        marginLeft: "auto",
-        marginRight: "auto",
-        width: "60vw",
-        height: "425px",
-      }}
-      ref={canvasContainerRef}
-      aria-hidden="true"
-    >
-      <canvas ref={canvasRef} />
-    </div>
+    <Container aria-hidden="true">
+      <div className={id} ref={canvasContainerRef}>
+        <canvas ref={canvasRef} />
+      </div>
+    </Container>
   );
 }
