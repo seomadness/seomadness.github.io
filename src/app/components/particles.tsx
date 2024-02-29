@@ -246,7 +246,7 @@ export default function Particles({
         marginLeft: "auto",
         marginRight: "auto",
         width: "60vw",
-        height: "40vh",
+        height: "425px",
       }}
       ref={canvasContainerRef}
       aria-hidden="true"
