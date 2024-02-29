@@ -40,6 +40,7 @@ export default function Header({ mode }: { mode: PaletteMode }) {
             fontWeight="bold"
             sx={{
               mt: 16,
+              mb: 8,
               color: (theme) =>
                 theme.palette.mode === "light"
                   ? "primary.main"
@@ -49,7 +50,7 @@ export default function Header({ mode }: { mode: PaletteMode }) {
             Hello
           </Typography>
           <Typography
-            variant="h4"
+            variant="h5"
             textAlign="center"
             color="text.primary"
             sx={{
@@ -58,17 +59,8 @@ export default function Header({ mode }: { mode: PaletteMode }) {
             }}
           >
             I work at the intersection of ui/ux design and development.
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign="center"
-            color="text.secondary"
-            sx={{
-              textShadow:
-                mode === "light" ? "#FFF 1px 1px 10px;" : "#000 1px 1px 10px;",
-            }}
-          >
-            Currently based in the Washington metropolitan area.
+            <br /> I enjoy problem-solving and building ideas into digital
+            products.
           </Typography>
           <WorkProcess />
         </Stack>

@@ -32,6 +32,7 @@ export default function Particles({
     if (canvasRef.current) {
       context.current = canvasRef.current.getContext("2d");
     }
+
     initCanvas();
     animate();
     window.addEventListener("resize", initCanvas);
@@ -104,7 +105,7 @@ export default function Particles({
     const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1));
     const dx = (Math.random() - 0.5) * 0.1;
     const dy = (Math.random() - 0.5) * 0.1;
-    const magnetism = 0.1 + Math.random() * 4;
+    const magnetism = 0.1 + Math.random();
     return {
       x,
       y,
@@ -127,8 +128,8 @@ export default function Particles({
       context.current.arc(x, y, size, 0, 3 * Math.PI);
       context.current.strokeStyle =
         mode === "light"
-          ? `rgba(175, 175, 175, ${alpha})`
-          : `rgba(200, 200, 200, ${alpha})`;
+          ? `rgba(200, 200, 200, ${alpha})`
+          : `rgba(175, 175, 175, ${alpha})`;
       context.current.stroke();
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 
@@ -241,6 +242,11 @@ export default function Particles({
         inset: "0px",
         animation: "fadeIn 5s",
         zIndex: -99,
+        top: "5vh",
+        marginLeft: "auto",
+        marginRight: "auto",
+        width: "60vw",
+        height: "40vh",
       }}
       ref={canvasContainerRef}
       aria-hidden="true"
