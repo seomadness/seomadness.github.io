@@ -26,23 +26,23 @@ const Container = styled("div")(({ theme }) => ({
     height: "400px",
     background: theme.palette.mode === "light" ? "aliceblue" : "#18252f",
     borderRadius: "100%",
+    opacity: "0.8",
   },
   ".small-particles": {
     position: "absolute",
     backgroundColor: "red",
     bottom: "20vh",
-    left: "74vw",
-    width: "200px",
-    height: "200px",
+    right: "12vw",
+    width: "300px",
+    height: "300px",
     background: theme.palette.mode === "light" ? "#f3f3f3" : "#171c1f",
     borderRadius: "100%",
+    opacity: "0.8",
   },
 }));
 
 export default function ContainedParticles({
   quantity = 30,
-  staticity = 50,
-  ease = 50,
   refresh = false,
   mode,
   id,
@@ -134,10 +134,7 @@ export default function ContainedParticles({
       context.current.translate(translateX, translateY);
       context.current.beginPath();
       context.current.arc(x, y, size, 0, 3 * Math.PI);
-      context.current.strokeStyle =
-        mode === "light"
-          ? `rgba(200, 200, 200, ${alpha})`
-          : `rgba(175, 175, 175, ${alpha})`;
+      context.current.strokeStyle = `rgba(175, 175, 175, ${alpha})`;
       context.current.stroke();
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 

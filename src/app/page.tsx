@@ -35,7 +35,7 @@ export default function HomePage() {
         }}
       >
         <ContainedParticles mode={mode} quantity={200} id="large-particles" />
-        <ContainedParticles mode={mode} quantity={75} id="small-particles" />
+        <ContainedParticles mode={mode} quantity={100} id="small-particles" />
         <div id="header-section" />
         <Header mode={mode} />
         <div id="portfolio-list" />
