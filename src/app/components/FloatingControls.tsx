@@ -10,7 +10,6 @@ import VerticalAlignTop from "@mui/icons-material/VerticalAlignTop";
 interface FloatingControlsProps {
   mode: PaletteMode;
   toggleMode: () => void;
-  //   scrollToTop: () => void;
 }
 
 function FloatingControls({ toggleMode }: FloatingControlsProps) {

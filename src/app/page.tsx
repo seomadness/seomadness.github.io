@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CssBaseline } from "@mui/material";
 import { PaletteMode } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
+import Fade from "@mui/material/Fade";
 import ContainedParticles from "./components/containedParticles";
 import getTheme from "./theme";
 import Header from "./components/Header";
@@ -12,8 +13,15 @@ import FloatingControls from "./components/FloatingControls";
 import Footer from "./components/Footer";
 
 export default function HomePage() {
+  const [loaded, setLoaded] = useState<boolean>(false);
   const [mode, setMode] = useState<PaletteMode>("light");
   const CustomTheme = getTheme(mode);
+
+  useEffect(function () {
+    const loaded = document.readyState == "complete";
+    console.debug(loaded);
+    setLoaded(loaded);
+  }, []);
 
   function toggleMode() {
     setMode((previous) => (previous === "dark" ? "light" : "dark"));
@@ -34,8 +42,20 @@ export default function HomePage() {
           overflow: "hidden",
         }}
       >
-        <ContainedParticles mode={mode} quantity={200} id="large-particles" />
-        <ContainedParticles mode={mode} quantity={100} id="small-particles" />
+        {loaded && (
+          <>
+            <ContainedParticles
+              mode={mode}
+              quantity={200}
+              id="large-particles"
+            />
+            <ContainedParticles
+              mode={mode}
+              quantity={100}
+              id="small-particles"
+            />
+          </>
+        )}
         <div id="header-section" />
         <Header mode={mode} />
         <div id="portfolio-list" />

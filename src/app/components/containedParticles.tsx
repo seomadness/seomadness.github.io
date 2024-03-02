@@ -16,10 +16,13 @@ interface ParticlesProps {
 const Container = styled("div")(({ theme }) => ({
   position: "absolute",
   inset: "0px",
-  animation: "fadeIn 5s",
   zIndex: -99,
+  ".hide": {
+    opacity: 0,
+  },
   ".large-particles": {
     position: "absolute",
+    animation: "fadeIn 0.4s linear",
     top: "10vh",
     left: "15vw",
     width: "400px",
@@ -30,14 +33,18 @@ const Container = styled("div")(({ theme }) => ({
   },
   ".small-particles": {
     position: "absolute",
-    backgroundColor: "red",
-    bottom: "20vh",
+    animation: "fadeIn 0.8s linear",
+    bottom: "22vh",
     right: "12vw",
     width: "300px",
     height: "300px",
     background: theme.palette.mode === "light" ? "#f3f3f3" : "#171c1f",
     borderRadius: "100%",
     opacity: "0.8",
+  },
+  "@keyframes fadeIn": {
+    "0%": { opacity: 0 },
+    "100%": { opacity: 1 },
   },
 }));
 
@@ -236,7 +243,7 @@ export default function ContainedParticles({
 
   return (
     <Container aria-hidden="true">
-      <div className={id} ref={canvasContainerRef}>
+      <div className={id ?? "hide"} ref={canvasContainerRef}>
         <canvas ref={canvasRef} />
       </div>
     </Container>
