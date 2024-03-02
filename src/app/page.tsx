@@ -1,20 +1,26 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { lazy } from "react";
 import { styled } from "@mui/system";
 import { CssBaseline } from "@mui/material";
 import { PaletteMode } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "util/hooks";
 import { toggleTheme } from "store/themeSlice";
-import ContainedParticles from "./components/containedParticles";
 import getTheme from "./theme";
 import Header from "./components/Header";
 import Portfolio from "./components/Portfolio/Portfolio";
 import FloatingControls from "./components/FloatingControls";
 import Footer from "./components/Footer";
 
+const ContainedParticles = lazy(
+  () => import("./components/containedParticles")
+);
+
 const Background = styled("div")(({ theme }) => ({
+  position: "absolute",
+  zIndex: -99,
   backgroundColor: theme.palette.background.default,
   display: "flex",
   flexDirection: "column",
@@ -35,7 +41,6 @@ export default function HomePage() {
 
   useEffect(function () {
     const loaded = document.readyState == "complete";
-    console.debug(loaded);
     setLoaded(loaded);
   }, []);
 
@@ -47,12 +52,8 @@ export default function HomePage() {
     <ThemeProvider theme={CustomTheme}>
       <CssBaseline />
       <Background>
-        {loaded && (
-          <>
-            <ContainedParticles quantity={250} id="large-particles" />
-            <ContainedParticles quantity={150} id="small-particles" />
-          </>
-        )}
+        <ContainedParticles quantity={250} id="large-particles" />
+        <ContainedParticles quantity={150} id="small-particles" />
         <div id="header-section" />
         <Header />
         <div id="portfolio-list" />

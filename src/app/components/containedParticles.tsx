@@ -13,7 +13,7 @@ interface ParticlesProps {
 }
 
 const Container = styled("div")(({ theme }) => ({
-  position: "absolute",
+  position: "fixed",
   inset: "0px",
   zIndex: 99,
   ".hide": {
@@ -23,9 +23,9 @@ const Container = styled("div")(({ theme }) => ({
     position: "absolute",
     animation: "fadeIn 0.3s linear",
     top: "10vh",
-    left: "15vw",
-    width: "400px",
-    height: "400px",
+    left: "12vw",
+    width: "450px",
+    height: "450px",
     background: theme.palette.mode === "light" ? "aliceblue" : "#18252f",
     borderRadius: "100%",
     opacity: 1,

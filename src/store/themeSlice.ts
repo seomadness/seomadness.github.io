@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const storedTheme = localStorage.getItem("theme") || null;
+
 const initialState = {
-  themeMode: "light",
+  themeMode: storedTheme || "light",
 };
 
 export const themeSlice = createSlice({
@@ -11,6 +13,7 @@ export const themeSlice = createSlice({
     toggleTheme: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers.
       state.themeMode = state.themeMode === "light" ? "dark" : "light";
+      localStorage.setItem("theme", state.themeMode);
     },
   },
 });
