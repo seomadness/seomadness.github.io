@@ -2,45 +2,44 @@
 
 import React, { useRef, useEffect } from "react";
 import { styled } from "@mui/system";
-import { PaletteMode } from "@mui/material";
+import { useAppSelector } from "util/hooks";
 
 interface ParticlesProps {
   quantity?: number;
   staticity?: number;
   ease?: number;
   refresh?: boolean;
-  mode: PaletteMode;
   id: string;
 }
 
 const Container = styled("div")(({ theme }) => ({
   position: "absolute",
   inset: "0px",
-  zIndex: -99,
+  zIndex: 99,
   ".hide": {
     opacity: 0,
   },
   ".large-particles": {
     position: "absolute",
-    animation: "fadeIn 0.4s linear",
+    animation: "fadeIn 0.3s linear",
     top: "10vh",
     left: "15vw",
     width: "400px",
     height: "400px",
     background: theme.palette.mode === "light" ? "aliceblue" : "#18252f",
     borderRadius: "100%",
-    opacity: "0.8",
+    opacity: 1,
   },
   ".small-particles": {
     position: "absolute",
-    animation: "fadeIn 0.8s linear",
-    bottom: "22vh",
+    animation: "fadeIn 1s linear",
+    bottom: "20vh",
     right: "12vw",
     width: "300px",
     height: "300px",
     background: theme.palette.mode === "light" ? "#f3f3f3" : "#171c1f",
     borderRadius: "100%",
-    opacity: "0.8",
+    opacity: 1,
   },
   "@keyframes fadeIn": {
     "0%": { opacity: 0 },
@@ -51,9 +50,10 @@ const Container = styled("div")(({ theme }) => ({
 export default function ContainedParticles({
   quantity = 30,
   refresh = false,
-  mode,
   id,
 }: ParticlesProps) {
+  const theme = useAppSelector((state) => state.theme.themeMode);
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
@@ -239,7 +239,7 @@ export default function ContainedParticles({
 
   useEffect(() => {
     animate();
-  }, [mode]);
+  }, [theme]);
 
   return (
     <Container aria-hidden="true">

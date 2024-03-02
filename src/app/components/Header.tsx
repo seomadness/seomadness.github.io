@@ -1,14 +1,15 @@
 "use client";
 
 import * as React from "react";
-import { PaletteMode } from "@mui/material";
+import { useAppSelector } from "util/hooks";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import WorkProcess from "./WorkProcess";
 
-export default function Header({ mode }: { mode: PaletteMode }) {
+export default function Header() {
+  const theme = useAppSelector((state) => state.theme.themeMode);
   return (
     <Box
       id="main"
@@ -54,8 +55,10 @@ export default function Header({ mode }: { mode: PaletteMode }) {
             textAlign="center"
             color="text.primary"
             sx={{
-              textShadow:
-                mode === "light" ? "#FFF 1px 1px 10px;" : "#000 1px 1px 10px;",
+              textShadow: (theme) =>
+                theme.palette.mode === "light"
+                  ? "#FFF 1px 1px 10px;"
+                  : "#000 1px 1px 10px;",
             }}
           >
             I work at the intersection of ui/ux design and development.

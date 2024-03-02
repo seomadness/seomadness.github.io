@@ -1,14 +1,12 @@
 "use client";
 
 import Box from "@mui/material/Box";
-import { PaletteMode } from "@mui/material";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import SettingsBrightness from "@mui/icons-material/SettingsBrightness";
 import GridViewIcon from "@mui/icons-material/GridView";
 import VerticalAlignTop from "@mui/icons-material/VerticalAlignTop";
 
 interface FloatingControlsProps {
-  mode: PaletteMode;
   toggleMode: () => void;
 }
 
