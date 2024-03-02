@@ -1,8 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let storedTheme = localStorage.getItem("theme")
-  ? localStorage.getItem("theme")
-  : "light";
+let storedTheme: string = "light";
+
+try {
+  if (typeof window !== "undefined" && localStorage.getItem("theme"))
+    storedTheme = localStorage.getItem("theme")!;
+} catch (error) {
+  console.debug("Theme Slice Local Storage Error: ", error);
+}
 
 const initialState = {
   themeMode: storedTheme,
