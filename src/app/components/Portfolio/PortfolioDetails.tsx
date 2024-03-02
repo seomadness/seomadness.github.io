@@ -17,8 +17,8 @@ export default function PortfolioDetails({
         id="portfolio-details"
         sx={{
           backgroundColor: (theme) => theme.palette.background.default,
-          my: { xs: 4, sm: 6 },
-          zIndex: 99,
+          my: { xs: 6, sm: 10 },
+          zIndex: 999,
         }}
       >
         <Box

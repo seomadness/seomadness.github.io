@@ -15,7 +15,9 @@ export default function Reservation() {
       sx={{ mt: { xs: 1, sm: 2 }, width: "100%" }}
     >
       <ReadableStack>
-        <Typography variant="h4">Reservation System</Typography>
+        <Typography variant="h4" className="title">
+          Reservation System
+        </Typography>
         <Typography variant="body1">
           Client: Internal Product Developers
           <br />
