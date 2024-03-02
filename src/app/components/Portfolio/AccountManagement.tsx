@@ -12,7 +12,9 @@ export default function AccountManagement() {
   return (
     <Grid container id="account-management" sx={{ mt: { xs: 1, sm: 2 } }}>
       <ReadableStack>
-        <Typography variant="h4">Account Management Services</Typography>
+        <Typography variant="h4" className="title">
+          Account Management Services
+        </Typography>
         <Typography variant="body2">
           Client: Department of Defense, Air Force - Kobayashi Maru <br />
           Kobayashi Maru was awarded the Department of Defense, 2020 Software
@@ -109,7 +111,7 @@ export default function AccountManagement() {
         />
       </Stack>
 
-      <ReadableStack my={5}>
+      <ReadableStack my={1}>
         <Stack spacing={2}>
           <Typography variant="h6" color="text.secondary">
             Conclusion

@@ -1,11 +1,11 @@
 "use client";
 
 import { configureStore } from "@reduxjs/toolkit";
-import themeSlice from "./themeSlice";
+import theme from "./themeSlice";
 
 export const store = configureStore({
   reducer: {
-    theme: themeSlice,
+    theme,
   },
 });
 

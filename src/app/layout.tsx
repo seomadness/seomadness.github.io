@@ -5,8 +5,9 @@ import Analytics from "./components/analytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Seo Portfolio",
-  description: "Seo UI/UX Engineer Design Portfolio",
+  title: "Seo UI/UX Engineer Portfolio",
+  description:
+    "Seo UI/UX Engineer Design Portfolio | I work at the intersection of ui/ux design and development.  I enjoy problem-solving and building ideas into digital products.",
 };
 
 export default function RootLayout({

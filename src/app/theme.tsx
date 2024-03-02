@@ -22,30 +22,43 @@ declare module "@mui/material/styles/createPalette" {
 }
 
 export const primary = {
-  50: "#ebecfc",
-  100: "#cbd2e6",
-  200: "#aeb4cc",
-  300: "#8f96b3",
-  400: "#79809f",
-  500: "#626c8d",
-  600: "#545e7d",
-  700: "#434b66",
-  800: "#333950",
-  900: "#202639",
+  50: "#fff5ff",
+  100: "#EBEDEF",
+  200: "#D6DBDF",
+  300: "#AEB6BF",
+  400: "#85929E",
+  500: "#5D6D7E",
+  600: "#34495E",
+  700: "#2E4053",
+  800: "#283747",
+  900: "#212F3C",
 };
 
 export const secondary = {
   50: "#fff5ff",
-  100: "#fcf1ff",
-  200: "#f6ebff",
-  300: "#e9deff",
-  400: "#c6bcdd",
-  500: "#a79dbd",
-  600: "#7d7492",
-  700: "#69607d",
-  800: "#49415d",
-  900: "#272039",
+  100: "#D4E6F1",
+  200: "#A9CCE3",
+  300: "#7FB3D5",
+  400: "#5499C7 ",
+  500: "#2980B9",
+  600: "#2471A3",
+  700: "#1F618D",
+  800: "#1A5276",
+  900: "#154360",
 };
+
+// export const secondary = {
+//   50: "#fff5ff",
+//   100: "#fcf1ff",
+//   200: "#f6ebff",
+//   300: "#e9deff",
+//   400: "#c6bcdd",
+//   500: "#a79dbd",
+//   600: "#7d7492",
+//   700: "#69607d",
+//   800: "#49415d",
+//   900: "#272039",
+// };
 
 export const red = {
   50: "#f9e3e6",
@@ -105,9 +118,12 @@ const customTheme = (mode: PaletteMode) => ({
       ...(mode === "dark" && { default: gray[900], paper: primary[900] }),
     },
     text: {
-      primary: gray[800],
-      secondary: primary[700],
-      ...(mode === "dark" && { primary: "#fff", secondary: primary[200] }),
+      primary: primary[900],
+      secondary: primary[600],
+      ...(mode === "dark" && {
+        primary: primary[100],
+        secondary: secondary[200],
+      }),
     },
     action: {
       selected: `${alpha(primary[200], 0.2)}`,

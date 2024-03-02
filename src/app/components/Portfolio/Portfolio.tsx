@@ -19,12 +19,17 @@ const StackComponent = ({ ...props }) => (
 );
 
 export const ReadableStack = styled(StackComponent)(({ theme }) => ({
+  "h4.title": {
+    marginBottom: theme.spacing(-2),
+    position: "relative",
+    width: "fit-content",
+  },
   ".MuiTypography-root": {
     width: "100%",
   },
   [theme.breakpoints.up("md")]: {
     ".MuiTypography-root": {
-      width: "70%",
+      width: "65%",
     },
   },
 }));
@@ -32,18 +37,33 @@ export const ReadableStack = styled(StackComponent)(({ theme }) => ({
 const CardComponent = ({ ...props }) => <Card {...props} />;
 
 const CardButton = styled(CardComponent)(({ theme }) => ({
-  p: 0,
   flexDirection: "column",
   height: "fit-content",
   width: "100%",
   minWidth: "400px",
-  borderRadius: 0,
-  background: "transparent",
-  ".MuiButtonBase": {
-    p: 0,
+  background: theme.palette.background.default,
+  borderBottom: "7px solid transparent",
+
+  // Animate Hover Over Portfolio
+  "&:hover:not(.selected)": {
+    borderWidth: "7px solid",
+    animation: "borderAnimation 1.5s infinite alternate",
   },
-  "&.selected:hover": {
-    background: theme.palette.background.paper,
+
+  // Except Selected
+  "&.selected": {
+    borderWidth: "7px solid",
+    borderImage: "linear-gradient(to right, #366388 , transparent) 1 0",
+    background: theme.palette.background.default,
+  },
+
+  "@keyframes borderAnimation": {
+    "0%": {
+      borderImage: "linear-gradient(to right, #366388 , transparent) 1 0",
+    },
+    "100%": {
+      borderImage: "linear-gradient(to right, transparent, #366388) 1 0",
+    },
   },
 }));
 
@@ -89,6 +109,7 @@ export default function Portfolio() {
   async function scrollToPortfolio() {
     const portfolioElement = document.getElementById("portfolio-section");
     const hasChild = await portfolioElement?.hasChildNodes;
+
     if (portfolioElement && hasChild) {
       const topTarget = portfolioElement.offsetTop;
       portfolioElement.scrollIntoView({ behavior: "smooth" });
@@ -127,13 +148,6 @@ export default function Portfolio() {
                     key={index}
                     component={Button}
                     onClick={() => handleIndexChange(index)}
-                    variant=""
-                    sx={{
-                      backgroundColor:
-                        projectIndex === index
-                          ? (theme) => theme.palette.background.paper
-                          : "transparent",
-                    }}
                   >
                     <Image
                       src={image}
@@ -157,23 +171,26 @@ export default function Portfolio() {
                         justifyContent: "space-between",
                         alignItems: { md: "center" },
                         background: "transparent !important",
-                        p: 1.5,
+                        pt: 1.5,
+                        px: 1.5,
+                        pb: 0.5,
                         gap: 1,
                       }}
                     >
                       <Typography
                         color="text.primary"
-                        variant="body1"
-                        fontWeight="bold"
+                        variant="h6"
+                        fontWeight="400"
                         sx={{ textTransform: "capitalize" }}
                       >
                         {title}
+                        <br />
                         <Typography
                           component="span"
                           color="text.secondary"
-                          variant="body2"
+                          variant="body1"
+                          sx={{}}
                         >
-                          <br />
                           {description}
                         </Typography>
                       </Typography>
@@ -184,18 +201,6 @@ export default function Portfolio() {
                       >
                         {subheader}
                       </Typography>
-                      {projectIndex === index && (
-                        <Box
-                          sx={{
-                            position: "absolute",
-                            backgroundColor: "primary.main",
-                            width: "100%",
-                            height: 7,
-                            bottom: 0,
-                            left: 0,
-                          }}
-                        />
-                      )}
                     </Box>
                   </CardButton>
                 </Grid>

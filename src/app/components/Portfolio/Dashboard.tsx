@@ -21,7 +21,9 @@ export default function Dashboard() {
     <Grid container id="dashboard" sx={{ mt: { xs: 1, sm: 2 } }}>
       <Grid item xs={12}>
         <ReadableStack mb={5}>
-          <Typography variant="h4">Core Dashboard</Typography>
+          <Typography variant="h4" className="title">
+            Core Dashboard
+          </Typography>
           <Typography variant="body1" sx={{ textDecoration: "underline" }}>
             Illustrations are recreated from the original design as visual aids
             and sensitive materials have been redacted for Non-Disclosure
@@ -205,7 +207,7 @@ export default function Dashboard() {
         </Grid>
       </Grid>
 
-      <ReadableStack mt={5}>
+      <ReadableStack mt={2}>
         <Stack spacing={2} direction={"column"}>
           <Typography variant="h6" color="text.secondary">
             Conclusion
@@ -315,7 +317,7 @@ export default function Dashboard() {
         Content Placement in 2 by 2 Array Grid Layout
       </Typography>
 
-      <ReadableStack mt={5}>
+      <ReadableStack mt={2}>
         <Stack spacing={3} direction={"column"} mb={{ sm: 5, md: 0 }}>
           <Typography variant="h6" color="text.secondary">
             Outcomes

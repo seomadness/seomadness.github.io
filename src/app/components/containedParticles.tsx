@@ -26,7 +26,11 @@ const Container = styled("div")(({ theme }) => ({
     left: "12vw",
     width: "450px",
     height: "450px",
-    background: theme.palette.mode === "light" ? "aliceblue" : "#18252f",
+    // background: theme.palette.mode === "light" ? "aliceblue" : "#18252f",
+    background:
+      theme.palette.mode === "light"
+        ? "linear-gradient(145deg, #D4E6F1   25%, #FDFEFE 80%)"
+        : "linear-gradient(145deg, #154360  30%, #000000 90%)",
     borderRadius: "100%",
     opacity: 1,
   },
@@ -37,7 +41,10 @@ const Container = styled("div")(({ theme }) => ({
     right: "12vw",
     width: "300px",
     height: "300px",
-    background: theme.palette.mode === "light" ? "#f3f3f3" : "#171c1f",
+    background:
+      theme.palette.mode === "light"
+        ? "linear-gradient(110deg, #F4F6F7  25%, #D6DBDF  80%)"
+        : "linear-gradient(110deg, #171c1f 20%, #212F3C 80%)",
     borderRadius: "100%",
     opacity: 1,
   },

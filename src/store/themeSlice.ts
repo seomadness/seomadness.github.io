@@ -1,10 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let storedTheme = "light";
-
-if (typeof window !== "undefined")
-  if (localStorage.getItem("theme"))
-    storedTheme = localStorage.getItem("theme")!;
+let storedTheme = localStorage.getItem("theme")
+  ? localStorage.getItem("theme")
+  : "light";
 
 const initialState = {
   themeMode: storedTheme,
