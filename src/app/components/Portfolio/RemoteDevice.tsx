@@ -12,7 +12,7 @@ export default function RemoteDevice() {
     <Grid
       container
       id="remote-device"
-      sx={{ mt: { xs: 1, sm: 2 }, width: "100%" }}
+      sx={{ mt: { xs: 1, sm: 2 }, width: "100%", mb: 4 }}
     >
       <ReadableStack>
         <Typography variant="h4" className="title" color="text.primary">

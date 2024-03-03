@@ -18,7 +18,7 @@ import wireframeComponent1728 from "images/portfolio/wireframe-dashboard-compone
 
 export default function Dashboard() {
   return (
-    <Grid container id="dashboard" sx={{ mt: { xs: 1, sm: 2 } }}>
+    <Grid container id="dashboard" sx={{ mt: { xs: 1, sm: 2 }, mb: 4 }}>
       <Grid item xs={12}>
         <ReadableStack mb={5}>
           <Typography variant="h4" className="title" color="text.primary">
