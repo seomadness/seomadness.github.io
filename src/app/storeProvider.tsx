@@ -10,10 +10,5 @@ export default function StoreProvider({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <Provider store={store}>
-      <CssBaseline />
-      {children}
-    </Provider>
-  );
+  return <Provider store={store}>{children}</Provider>;
 }

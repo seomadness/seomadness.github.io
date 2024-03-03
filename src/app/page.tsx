@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
+import Loading from "./components/Loading";
 import { lazy } from "react";
+import ThemeContextProvider from "../util/hooks/themeContext";
+import { useThemeMode } from "../util/hooks/themeContext";
 import { styled } from "@mui/system";
 import { CssBaseline } from "@mui/material";
 import { PaletteMode } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
-import { useAppDispatch, useAppSelector } from "util/hooks";
-import { toggleTheme } from "store/themeSlice";
 import getTheme from "./theme";
 import Header from "./components/Header";
 import Portfolio from "./components/Portfolio/Portfolio";
@@ -31,22 +32,12 @@ const Background = styled("div")(({ theme }) => ({
   overflow: "hidden",
 }));
 
-export default function HomePage() {
-  const theme = useAppSelector((state) => state.theme.mode);
-  const dispatch = useAppDispatch();
+function MainContent() {
+  const [themeMode] = useThemeMode();
 
-  const [loaded, setLoaded] = useState<boolean>(false);
-
-  const CustomTheme = getTheme(theme as PaletteMode);
-
-  useEffect(function () {
-    const loaded = document.readyState == "complete";
-    setLoaded(loaded);
-  }, []);
-
-  function toggleMode() {
-    dispatch(toggleTheme());
-  }
+  const CustomTheme = React.useMemo(() => {
+    return getTheme(themeMode as PaletteMode);
+  }, [themeMode]);
 
   return (
     <ThemeProvider theme={CustomTheme}>
@@ -58,9 +49,19 @@ export default function HomePage() {
         <Header />
         <div id="portfolio-list" />
         <Portfolio />
-        <FloatingControls toggleMode={toggleMode} />
+        <FloatingControls />
         <Footer />
       </Background>
     </ThemeProvider>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <ThemeContextProvider>
+        <MainContent />
+      </ThemeContextProvider>
+    </Suspense>
   );
 }
