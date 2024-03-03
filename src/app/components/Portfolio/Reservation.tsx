@@ -138,7 +138,7 @@ export default function Reservation() {
           </Typography>
         </ReadableStack>
 
-        <Grid item xs={6} sm={12} mt={4} mb={5}>
+        <Grid item xs={6} sm={12} mt={4} mb={0}>
           <Image
             src={reservationFiltered}
             width={0}

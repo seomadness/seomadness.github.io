@@ -1,31 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let storedTheme: string = "light";
-
-try {
-  if (typeof window !== "undefined" && localStorage.getItem("theme"))
-    storedTheme = localStorage.getItem("theme")!;
-} catch (error) {
-  console.debug("Theme Slice Local Storage Error: ", error);
-}
+// export function getFromLocalStorage() {
+//   if (typeof window !== "undefined")
+//     if (window.localStorage.getItem("theme"))
+//       return window.localStorage.getItem("theme")!;
+//   return "light";
+// }
 
 const initialState = {
-  themeMode: storedTheme,
+  mode: "light",
 };
 
 export const themeSlice = createSlice({
   name: "theme",
   initialState,
   reducers: {
+    hydrate: (state, action) => {
+      // state = action.payload will not update the store
+      return action.payload;
+    },
     toggleTheme: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers.
-      state.themeMode = state.themeMode === "light" ? "dark" : "light";
-      localStorage.setItem("theme", state.themeMode);
+      state.mode = state.mode === "light" ? "dark" : "light";
+      // window.localStorage.setItem("theme", state.mode);
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { toggleTheme } = themeSlice.actions;
+export const { hydrate, toggleTheme } = themeSlice.actions;
 
 export default themeSlice.reducer;

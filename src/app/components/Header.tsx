@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import WorkProcess from "./WorkProcess";
 
 export default function Header() {
-  const theme = useAppSelector((state) => state.theme.themeMode);
+  const theme = useAppSelector((state) => state.theme.mode);
   return (
     <Box
       id="main"

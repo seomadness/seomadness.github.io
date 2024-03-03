@@ -59,7 +59,7 @@ export default function ContainedParticles({
   refresh = false,
   id,
 }: ParticlesProps) {
-  const theme = useAppSelector((state) => state.theme.themeMode);
+  const theme = useAppSelector((state) => state.theme.mode);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
