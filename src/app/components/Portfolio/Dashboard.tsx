@@ -21,10 +21,14 @@ export default function Dashboard() {
     <Grid container id="dashboard" sx={{ mt: { xs: 1, sm: 2 } }}>
       <Grid item xs={12}>
         <ReadableStack mb={5}>
-          <Typography variant="h4" className="title">
+          <Typography variant="h4" className="title" color="text.primary">
             Core Dashboard
           </Typography>
-          <Typography variant="body1" sx={{ textDecoration: "underline" }}>
+          <Typography
+            variant="body1"
+            color="text.primary"
+            sx={{ textDecoration: "underline" }}
+          >
             Illustrations are recreated from the original design as visual aids
             and sensitive materials have been redacted for Non-Disclosure
             Agreement purposes.

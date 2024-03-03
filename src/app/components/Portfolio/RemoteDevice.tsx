@@ -15,10 +15,10 @@ export default function RemoteDevice() {
       sx={{ mt: { xs: 1, sm: 2 }, width: "100%" }}
     >
       <ReadableStack>
-        <Typography variant="h4" className="title">
+        <Typography variant="h4" className="title" color="text.primary">
           Remote Device Platform
         </Typography>
-        <Typography variant="body1">
+        <Typography variant="body1" color="text.primary">
           Client: Internal Product Developers
           <br />
           <u>
