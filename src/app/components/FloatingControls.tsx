@@ -1,16 +1,15 @@
 "use client";
 
 import Box from "@mui/material/Box";
+import { useThemeMode } from "util/hooks/themeContext";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import SettingsBrightness from "@mui/icons-material/SettingsBrightness";
 import GridViewIcon from "@mui/icons-material/GridView";
 import VerticalAlignTop from "@mui/icons-material/VerticalAlignTop";
 
-interface FloatingControlsProps {
-  toggleMode: () => void;
-}
+function FloatingControls() {
+  const [themeMode, handleThemeMode] = useThemeMode();
 
-function FloatingControls({ toggleMode }: FloatingControlsProps) {
   function scrollTo(idElement: string) {
     const topElement = document.getElementById(idElement);
     if (topElement) {
@@ -41,7 +40,11 @@ function FloatingControls({ toggleMode }: FloatingControlsProps) {
         color="primary"
         sx={{ backgroundColor: "background.default" }}
       >
-        <ToggleButton value onClick={toggleMode} aria-label="toggle theme mode">
+        <ToggleButton
+          value
+          onClick={() => handleThemeMode(themeMode)}
+          aria-label="toggle theme mode"
+        >
           <SettingsBrightness sx={{ fontSize: "24px" }} />
         </ToggleButton>
         <ToggleButton
