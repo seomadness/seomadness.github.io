@@ -226,7 +226,7 @@ export default function Dashboard() {
             of 2 by 2 arrays. Each array holds up to four small components, two
             medium components, or one large component. The size variations
             accommodate all data content and provide dashboard customization to
-            agjust high-interest content in accordance with operational needs.
+            adjust high-interest content in accordance with operational needs.
           </Typography>
         </Stack>
       </ReadableStack>
