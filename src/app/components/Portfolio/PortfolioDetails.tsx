@@ -16,6 +16,7 @@ export default function PortfolioDetails({
       <Container
         id="portfolio-details"
         sx={{
+          boxShadow: 1,
           backgroundColor: (theme) => theme.palette.background.default,
           my: { xs: 6, sm: 10 },
           zIndex: 999,

@@ -32,7 +32,7 @@ const Background = styled("div")(({ theme }) => ({
 }));
 
 export default function HomePage() {
-  const theme = useAppSelector((state) => state.theme.themeMode);
+  const theme = useAppSelector((state) => state.theme.mode);
   const dispatch = useAppDispatch();
 
   const [loaded, setLoaded] = useState<boolean>(false);

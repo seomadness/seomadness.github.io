@@ -15,10 +15,10 @@ export default function Reservation() {
       sx={{ mt: { xs: 1, sm: 2 }, width: "100%" }}
     >
       <ReadableStack>
-        <Typography variant="h4" className="title">
+        <Typography variant="h4" className="title" color="text.primary">
           Reservation System
         </Typography>
-        <Typography variant="body1">
+        <Typography variant="body2" color="text.primary">
           Client: Internal Product Developers
           <br />
           <u>
@@ -138,7 +138,7 @@ export default function Reservation() {
           </Typography>
         </ReadableStack>
 
-        <Grid item xs={6} sm={12} mt={4} mb={5}>
+        <Grid item xs={6} sm={12} mt={4} mb={0}>
           <Image
             src={reservationFiltered}
             width={0}

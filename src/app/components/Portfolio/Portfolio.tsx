@@ -14,26 +14,6 @@ import dashboardFinal from "images/portfolio/dashboard-final-data.png";
 import remoteDevice from "images/portfolio/remote-device-interaction-shell.png";
 import deviceReservation from "images/portfolio/reservation.png";
 
-const StackComponent = ({ ...props }) => (
-  <Stack id="readable-stack" spacing={5} direction={"column"} {...props} />
-);
-
-export const ReadableStack = styled(StackComponent)(({ theme }) => ({
-  "h4.title": {
-    marginBottom: theme.spacing(-2),
-    position: "relative",
-    width: "fit-content",
-  },
-  ".MuiTypography-root": {
-    width: "100%",
-  },
-  [theme.breakpoints.up("md")]: {
-    ".MuiTypography-root": {
-      width: "65%",
-    },
-  },
-}));
-
 const CardComponent = ({ ...props }) => <Card {...props} />;
 
 const CardButton = styled(CardComponent)(({ theme }) => ({
@@ -43,6 +23,7 @@ const CardButton = styled(CardComponent)(({ theme }) => ({
   minWidth: "400px",
   background: theme.palette.background.default,
   borderBottom: "7px solid transparent",
+  borderRadius: 0,
 
   // Animate Hover Over Portfolio
   "&:hover:not(.selected)": {
@@ -67,11 +48,31 @@ const CardButton = styled(CardComponent)(({ theme }) => ({
   },
 }));
 
+const StackComponent = ({ ...props }) => (
+  <Stack id="readable-stack" spacing={5} direction={"column"} {...props} />
+);
+
+export const ReadableStack = styled(StackComponent)(({ theme }) => ({
+  "h4.title": {
+    marginBottom: theme.spacing(-2),
+    position: "relative",
+    width: "fit-content",
+  },
+  ".MuiTypography-root": {
+    width: "100%",
+  },
+  [theme.breakpoints.up("md")]: {
+    ".MuiTypography-root": {
+      width: "65%",
+    },
+  },
+}));
+
 const projects = [
   {
     title: "Main Page",
     show: false,
-    image: "https://placehold.co/600x400",
+    image: "",
   },
   {
     title: "Core Dashboard",
