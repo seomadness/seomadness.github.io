@@ -25,7 +25,7 @@ function FloatingControls() {
   return (
     <Box
       sx={{
-        right: 24,
+        right: 30,
         top: "50%",
         position: "fixed",
         display: "flex",
@@ -38,7 +38,7 @@ function FloatingControls() {
         aria-label="FloatingControls"
         orientation="vertical"
         color="primary"
-        sx={{ backgroundColor: "background.default" }}
+        sx={{ backgroundColor: "background.default", boxShadow: 2 }}
       >
         <ToggleButton
           value
