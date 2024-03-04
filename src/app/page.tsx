@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, Suspense } from "react";
+import React, { Suspense } from "react";
 import Loading from "./components/Loading";
 import { lazy } from "react";
 import ThemeContextProvider from "../util/hooks/themeContext";

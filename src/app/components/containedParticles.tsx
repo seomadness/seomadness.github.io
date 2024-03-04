@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
+import { useThemeMode } from "util/hooks/themeContext";
 import { styled } from "@mui/system";
 import { useAppSelector } from "util/hooks";
 
@@ -26,10 +27,9 @@ const Container = styled("div")(({ theme }) => ({
     left: "12vw",
     width: "450px",
     height: "450px",
-    // background: theme.palette.mode === "light" ? "aliceblue" : "#18252f",
     background:
       theme.palette.mode === "light"
-        ? "linear-gradient(145deg, #D4E6F1   25%, #FDFEFE 80%)"
+        ? "linear-gradient(145deg, #a1c4e6  25%, #FDFEFE 90%)"
         : "linear-gradient(145deg, #154360  30%, #000000 90%)",
     borderRadius: "100%",
     opacity: 1,
@@ -59,6 +59,7 @@ export default function ContainedParticles({
   refresh = false,
   id,
 }: ParticlesProps) {
+  const [themeMode] = useThemeMode();
   const theme = useAppSelector((state) => state.theme.mode);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -148,7 +149,10 @@ export default function ContainedParticles({
       context.current.translate(translateX, translateY);
       context.current.beginPath();
       context.current.arc(x, y, size, 0, 3 * Math.PI);
-      context.current.strokeStyle = `rgba(175, 175, 175, ${alpha})`;
+      context.current.strokeStyle =
+        themeMode === "light"
+          ? `rgba(54, 99, 136, ${alpha})`
+          : `rgba(210, 210, 210, ${alpha})`;
       context.current.stroke();
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 
@@ -246,7 +250,7 @@ export default function ContainedParticles({
 
   useEffect(() => {
     animate();
-  }, [theme]);
+  }, [themeMode]);
 
   return (
     <Container aria-hidden="true">
