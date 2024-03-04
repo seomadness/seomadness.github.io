@@ -131,7 +131,7 @@ export default function Dashboard() {
             to maintain a uniform aesthetic across all dashboards reflecting
             different services. The new design will allow users to easily scan
             items, and remember the order and location of high-interest content.
-            The custom reorder feature will provide the option to priortize the
+            The custom reorder feature will provide the option to prioritize the
             array of items according to individual specifications.
           </Typography>
           <Typography variant="body1" color="text.primary">
