@@ -22,7 +22,7 @@ const Container = styled("div")(({ theme }) => ({
   },
   ".large-particles": {
     position: "absolute",
-    animation: "fadeIn 0.3s linear",
+    animation: "fadeIn 0.5s linear",
     top: "10vh",
     left: "12vw",
     width: "450px",
@@ -36,11 +36,11 @@ const Container = styled("div")(({ theme }) => ({
   },
   ".small-particles": {
     position: "absolute",
-    animation: "fadeIn 1s linear",
+    animation: "fadeIn 1.25 s linear",
     bottom: "20vh",
     right: "12vw",
-    width: "300px",
-    height: "300px",
+    width: "250px",
+    height: "250px",
     background:
       theme.palette.mode === "light"
         ? "linear-gradient(110deg, #F4F6F7  25%, #D6DBDF  80%)"
@@ -48,13 +48,28 @@ const Container = styled("div")(({ theme }) => ({
     borderRadius: "100%",
     opacity: 1,
   },
+  ".tertiary-particles": {
+    position: "absolute",
+    animation: "fadeIn 2s linear",
+    top: "15vh",
+    right: "30vw",
+    width: "150px",
+    height: "150px",
+    background:
+      theme.palette.mode === "light"
+        ? "linear-gradient(20deg, #FAF9FB  25%,#D6CADD  80%)"
+        : "linear-gradient(20deg, #171c1f 20%, #5D5263 80%)",
+    borderRadius: "100%",
+    opacity: 1,
+  },
+
   "@keyframes fadeIn": {
     "0%": { opacity: 0 },
     "100%": { opacity: 1 },
   },
 }));
 
-export default function ContainedParticles({
+function ContainedParticles({
   quantity = 30,
   refresh = false,
   id,
@@ -151,7 +166,7 @@ export default function ContainedParticles({
       context.current.arc(x, y, size, 0, 3 * Math.PI);
       context.current.strokeStyle =
         themeMode === "light"
-          ? `rgba(54, 99, 136, ${alpha})`
+          ? `rgba(115, 115, 115, ${alpha})`
           : `rgba(210, 210, 210, ${alpha})`;
       context.current.stroke();
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -258,5 +273,15 @@ export default function ContainedParticles({
         <canvas ref={canvasRef} />
       </div>
     </Container>
+  );
+}
+
+export default function ThreeSpots() {
+  return (
+    <React.Fragment>
+      <ContainedParticles quantity={150} id="large-particles" />
+      <ContainedParticles quantity={50} id="small-particles" />
+      <ContainedParticles quantity={10} id="tertiary-particles" />
+    </React.Fragment>
   );
 }
