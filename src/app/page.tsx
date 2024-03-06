@@ -43,8 +43,7 @@ function MainContent() {
     <ThemeProvider theme={CustomTheme}>
       <CssBaseline />
       <Background>
-        <ContainedParticles quantity={250} id="large-particles" />
-        <ContainedParticles quantity={150} id="small-particles" />
+        <ContainedParticles />
         <div id="header-section" />
         <Header />
         <div id="portfolio-list" />
