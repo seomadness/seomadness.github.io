@@ -189,7 +189,7 @@ export default function Portfolio() {
                         <Typography
                           component="span"
                           color="text.secondary"
-                          variant="body1"
+                          variant="body2"
                           sx={{ textTransform: "capitalize" }}
                         >
                           {description} {subheader}
