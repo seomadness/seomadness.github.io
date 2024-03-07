@@ -174,7 +174,8 @@ export default function Portfolio() {
                         justifyContent: "space-between",
                         alignItems: "left",
                         background: "transparent !important",
-                        py: 1.5,
+                        pt: 1.5,
+                        pb: 1,
                         px: 2,
                       }}
                     >
