@@ -14,14 +14,20 @@ interface ParticlesProps {
 }
 
 const Container = styled("div")(({ theme }) => ({
-  position: "fixed",
+  position: "absolute",
   inset: "0px",
   zIndex: 99,
   ".hide": {
     opacity: 0,
   },
-  ".large-particles": {
+
+  ".circle": {
     position: "absolute",
+    borderRadius: "100%",
+    opacity: 1,
+    transformStyle: "preserve-3d",
+  },
+  ".large-particles": {
     animation: "fadeIn 0.5s linear",
     top: "10vh",
     left: "12vw",
@@ -31,13 +37,10 @@ const Container = styled("div")(({ theme }) => ({
       theme.palette.mode === "light"
         ? "linear-gradient(145deg, #a1c4e6  25%, #FDFEFE 90%)"
         : "linear-gradient(145deg, #154360  30%, #000000 90%)",
-    borderRadius: "100%",
-    opacity: 1,
   },
   ".small-particles": {
-    position: "absolute",
-    animation: "fadeIn 1.25 s linear",
-    bottom: "20vh",
+    animation: "fadeIn 2 s linear",
+    top: "60vh",
     right: "12vw",
     width: "250px",
     height: "250px",
@@ -45,12 +48,9 @@ const Container = styled("div")(({ theme }) => ({
       theme.palette.mode === "light"
         ? "linear-gradient(110deg, #F4F6F7  25%, #D6DBDF  80%)"
         : "linear-gradient(110deg, #171c1f 20%, #212F3C 80%)",
-    borderRadius: "100%",
-    opacity: 1,
   },
   ".tertiary-particles": {
-    position: "absolute",
-    animation: "fadeIn 2s linear",
+    animation: "fadeIn 3s linear",
     top: "15vh",
     right: "30vw",
     width: "150px",
@@ -59,8 +59,6 @@ const Container = styled("div")(({ theme }) => ({
       theme.palette.mode === "light"
         ? "linear-gradient(20deg, #FAF9FB  25%,#D6CADD  80%)"
         : "linear-gradient(20deg, #171c1f 20%, #5D5263 80%)",
-    borderRadius: "100%",
-    opacity: 1,
   },
 
   "@keyframes fadeIn": {
@@ -279,9 +277,9 @@ function ContainedParticles({
 export default function ThreeSpots() {
   return (
     <React.Fragment>
-      <ContainedParticles quantity={150} id="large-particles" />
-      <ContainedParticles quantity={50} id="small-particles" />
-      <ContainedParticles quantity={10} id="tertiary-particles" />
+      <ContainedParticles quantity={150} id="circle large-particles" />
+      <ContainedParticles quantity={50} id="circle small-particles" />
+      <ContainedParticles quantity={10} id="circle tertiary-particles" />
     </React.Fragment>
   );
 }
