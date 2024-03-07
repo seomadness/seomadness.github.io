@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import accountWeb from "images/portfolio/account-web-access-prototype.png";
 import dashboardFinal from "images/portfolio/dashboard-final-data.png";
 import remoteDevice from "images/portfolio/remote-device-interaction-shell.png";
@@ -21,9 +22,9 @@ const CardButton = styled(CardComponent)(({ theme }) => ({
   height: "fit-content",
   width: "100%",
   minWidth: "400px",
-  background: theme.palette.background.default,
+  background: theme.palette.background.paper,
   borderBottom: "7px solid transparent",
-  borderRadius: 0,
+  borderRadius: 2,
 
   // Animate Hover Over Portfolio
   "&:hover:not(.selected)": {
@@ -37,6 +38,8 @@ const CardButton = styled(CardComponent)(({ theme }) => ({
     borderImage: "linear-gradient(to right, #366388 , transparent) 1 0",
     background: theme.palette.background.default,
   },
+
+  "&.MuiPaper-root": { padding: 0, margin: 0 },
 
   "@keyframes borderAnimation": {
     "0%": {
@@ -168,40 +171,44 @@ export default function Portfolio() {
                         width: "100%",
                         display: "flex",
                         textAlign: "left",
-                        flexDirection: { xs: "column", md: "row" },
                         justifyContent: "space-between",
-                        alignItems: { md: "center" },
+                        alignItems: "left",
                         background: "transparent !important",
                         pt: 1.5,
-                        px: 1.5,
-                        pb: 0.5,
-                        gap: 1,
+                        pb: 1,
+                        px: 2,
                       }}
                     >
-                      <Typography
-                        color="text.primary"
-                        variant="h6"
-                        fontWeight="400"
-                        sx={{ textTransform: "capitalize" }}
-                      >
-                        {title}
-                        <br />
+                      <Grid item xs>
+                        <Typography
+                          color="text.primary"
+                          variant="h5"
+                          sx={{ textTransform: "capitalize" }}
+                        >
+                          {title}
+                        </Typography>
                         <Typography
                           component="span"
                           color="text.secondary"
-                          variant="body1"
-                          sx={{}}
+                          variant="body2"
+                          sx={{ textTransform: "capitalize" }}
                         >
-                          {description}
+                          {description} {subheader}
                         </Typography>
-                      </Typography>
-                      <Typography
-                        color="text.secondary"
-                        variant="body2"
-                        sx={{ textTransform: "capitalize", my: 0.25 }}
+                      </Grid>
+                      <Grid
+                        item
+                        xs={1}
+                        color="text.primary"
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          pt: 1,
+                        }}
                       >
-                        {subheader}
-                      </Typography>
+                        {projectIndex === index ? <></> : <ArrowDownwardIcon />}
+                      </Grid>
                     </Box>
                   </CardButton>
                 </Grid>
