@@ -48,7 +48,7 @@ export default function Header() {
                   : "primary.light",
             }}
           >
-            Hello
+            Hello, I'm Victoria
           </Typography>
           <Typography
             variant="h5"
