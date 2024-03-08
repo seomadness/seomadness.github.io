@@ -48,7 +48,7 @@ export default function Header() {
                   : "primary.light",
             }}
           >
-            Hello, I'm Victoria
+            Hello
           </Typography>
           <Typography
             variant="h5"
@@ -61,7 +61,8 @@ export default function Header() {
                   : "#000 1px 1px 10px;",
             }}
           >
-            I work at the intersection of ui/ux design and development.
+            I'm Victoria. I work at the intersection of ui/ux design and
+            development.
             <br /> I enjoy problem-solving and building ideas into digital
             products.
           </Typography>
