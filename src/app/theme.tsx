@@ -156,7 +156,7 @@ const customTheme = (mode: PaletteMode) => ({
       lineHeight: 1.5,
     },
     h5: {
-      fontSize: 26,
+      fontSize: 30,
       fontWeight: 300,
     },
     h6: {

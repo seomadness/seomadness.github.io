@@ -61,8 +61,7 @@ export default function Header() {
                   : "#000 1px 1px 10px;",
             }}
           >
-            I'm Victoria. <br />I work at the intersection of ui/ux design and
-            development.
+            I&apos;m Victoria. <br />I synthesize ui/ux design and development.
             <br /> I enjoy problem-solving and building ideas into digital
             products.
           </Typography>
