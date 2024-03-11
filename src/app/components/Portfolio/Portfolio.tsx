@@ -25,6 +25,7 @@ const CardButton = styled(CardComponent)(({ theme }) => ({
   background: theme.palette.background.paper,
   borderBottom: "7px solid transparent",
   borderRadius: 2,
+  lineHeight: "normal",
 
   // Animate Hover Over Portfolio
   "&:hover:not(.selected)": {
@@ -174,8 +175,7 @@ export default function Portfolio() {
                         justifyContent: "space-between",
                         alignItems: "left",
                         background: "transparent !important",
-                        pt: 1.5,
-                        pb: 1,
+                        py: 1.5,
                         px: 2,
                       }}
                     >
