@@ -38,7 +38,7 @@ function FloatingControls() {
         aria-label="FloatingControls"
         orientation="vertical"
         color="primary"
-        sx={{ backgroundColor: "background.default", boxShadow: 2 }}
+        sx={{ backgroundColor: "background.paper", boxShadow: 2 }}
       >
         <ToggleButton
           value
